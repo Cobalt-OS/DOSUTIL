@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(!strcmp(argv[2], "--help"))
    {
-      puts("sh - Minibox shell");
+      puts("sh - DOS Coreutils shell");
       puts("  sh");
       puts("  sh --help|--version\r\n");
       puts("Note:");
