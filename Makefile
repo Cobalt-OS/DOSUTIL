@@ -58,5 +58,3 @@ all:
 	wcc -0 -s commands\time.c  -fo=commands\time.obj
 	wlink file commands\time.obj
 	upx -9 commands\time.exe
-	
-	del commands\*.obj
