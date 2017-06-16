@@ -1,4 +1,4 @@
-DOS Coreutils 0.1
+DOS Coreutils 0.2
 
 Linux commands in DOS.
 
@@ -12,7 +12,7 @@ Usage:
 
 Compile:
 
-  These programs must be compiled with DJGPP and
+  The program must be compiled with Open Watcom and
   optionally should compressed with UPX. Compreesing
   with UPX is default.
   

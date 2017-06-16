@@ -6,20 +6,20 @@
 
 int main(int argc, char *argv[])
 {
-   int i = 2;
+   int i = 1;
 
 #ifdef HELP
-   if(!strcmp(argv[2], "--help"))
+   if(!strcmp(argv[1], "--help"))
    {
-      puts("rmdir - Removes specified directories.");
-      puts("  rmdir directories");
-      puts("  rmdir --help|--version");
+      puts("MINIBOX main - Removes specified directories.");
+      puts("  MINIBOX main directories");
+      puts("  MINIBOX main --help|--version");
       return 0;
    }
 #endif
 
 #ifdef VERSION
-   if(!strcmp(argv[2], "--version"))
+   if(!strcmp(argv[1], "--version"))
    {
       version();
       return 0;

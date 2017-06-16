@@ -1,17 +1,17 @@
-/***********************************
- * DOS Coreutils beep Command File *
- ***********************************/
+/******************************************
+ * DOS Coreutils beep Command Source File *
+ ******************************************/
 
 #include "../dosc.h"
 
 int main(int argc, char *argv[])
 {
-   int i = 2;
+   int i = 1;
    int frequency = 750;
    int length = 1000;
 
 #ifdef HELP
-      if(!strcmp(argv[2], "--help"))
+      if(!strcmp(argv[i], "--help"))
       {
          puts("beep - Output sound from PC speaker.");
          puts("  beep [options]");
@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 #endif
 
 #ifdef VERSION
-      if(!strcmp(argv[2], "--version"))
+      if(!strcmp(argv[i], "--version"))
       {
          version();
          return 0;

@@ -1,13 +1,13 @@
-/************************************
- * DOS Coreutils clear Command File *
- ************************************/
+/*******************************************
+ * DOS Coreutils clear Command Source File *
+ *******************************************/
 
 #include "../dosc.h"
 
-int command_clear(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 #ifdef HELP
-      if(!strcmp(argv[2], "--help"))
+      if(!strcmp(argv[1], "--help"))
       {
          puts("clear - Output sound from PC speaker.");
          puts("  clear");
@@ -17,14 +17,14 @@ int command_clear(int argc, char *argv[])
 #endif
 
 #ifdef VERSION
-      if(!strcmp(argv[2], "--version"))
+      if(!strcmp(argv[1], "--version"))
       {
          version();
          return 0;
       }
 #endif
 
-   clrscr();
+   _clearscreen(_GCLEARSCREEN);
 
    return 0;
 }

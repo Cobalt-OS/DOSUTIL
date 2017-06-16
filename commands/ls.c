@@ -1,6 +1,6 @@
-/*********************************
- * DOS Coreutils ls Command File *
- *********************************/
+/****************************************
+ * DOS Coreutils ls Command Source File *
+ ****************************************/
 
 #include "../dosc.h"
 
@@ -13,28 +13,29 @@ void path_current_directory(char *path)
 
 int main(int argc, char *argv[])
 {
-   int i = 2;
-   char *path = alloca(MAX_PATH_LENGTH);
+   int i = 1;
+   char *path;
    DIR *directory;
    struct dirent *element;
    struct stat status;
    char one_column = 0;
    char do_not_ignore = 0;
    char long_listing = 0;
-   struct winsize screen_size;
+   short column_1 = 0;
+   short column_2 = 0;
    unsigned char longest_name_length = 0;
    unsigned char column_count = 0;
    unsigned char column_size = 0;
    int j = 0;
 
-   if(argc > 2)
+   if(argc > 1)
    {
 #ifdef HELP
-      if(!strcmp(argv[2], "--help"))
+      if(!strcmp(argv[1], "--help"))
       {
          puts("ls - List directory contents.");
          puts("  ls [options] [file]");
-         puts("  echo --help|--version\r\n");
+         puts("  ls --help|--version\r\n");
          puts("Options:");
          puts("-1  Display output as one column.");
          puts("-a  Don't ignore \".\" and \"..\".");
@@ -44,12 +45,14 @@ int main(int argc, char *argv[])
 #endif
 
 #ifdef VERSION
-      if(!strcmp(argv[2], "--version"))
+      if(!strcmp(argv[1], "--version"))
       {
          version();
          return 0;
       }
 #endif
+
+      path = malloc(MAX_PATH_LENGTH);
 
       for(i; i < argc; i++)
       {
@@ -115,13 +118,15 @@ int main(int argc, char *argv[])
             {
                printf("  ");
             }
-
-            printf("%16d %s \r\n", status.st_size, element->d_name);
+			printf("%16d " ,status.st_size);
+			puts(element->d_name);
          }
       }
       else
       {
-         ioctl(0, TIOCGWINSZ, &screen_size);
+         _gettextwindow(NULL, &column_1, NULL, &column_2);
+		 
+		 column_2 += column_1;
          
          while(element = readdir(directory))
          {
@@ -130,19 +135,19 @@ int main(int argc, char *argv[])
                continue;
             }
             
-            if(longest_name_length < element->d_namlen)
+            if(longest_name_length < strlen(element->d_name))
             {
-               longest_name_length = element->d_namlen;
+               longest_name_length = strlen(element->d_name);
             }
          }
 
-         column_count = screen_size.ws_col / (longest_name_length + 2);
+         column_count = column_2 / (longest_name_length + 2);
          if(column_count == 0)
          {
             column_count = 1;
          }
 
-         column_size = screen_size.ws_col / column_count;
+         column_size = column_2 / column_count;
 
          rewinddir(directory);
 
@@ -156,7 +161,7 @@ int main(int argc, char *argv[])
             }
 
             printf("%s", element->d_name);
-            for(j = element->d_namlen; j < column_size - 1; j++)
+            for(j = strlen(element->d_name); j < column_size - 1; j++)
             {
                printf(" ");
             }
@@ -170,4 +175,8 @@ int main(int argc, char *argv[])
          }
       }
    }
+
+   free(path);
+
+   return 0;
 }

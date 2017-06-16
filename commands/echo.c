@@ -1,6 +1,6 @@
-/***********************************
- * DOS Coreutils echo Command File *
- ***********************************/
+/******************************************
+ * DOS Coreutils echo Command Source File *
+ ******************************************/
 
 #include "../dosc.h"
 
@@ -8,58 +8,58 @@ int main(int argc, char *argv[])
 {
    char backslash_escapes = 0;
    char new_line = 1;
-   int i = 2;
+   int i = 1;
    int parameter_length = 0;
    int j = 0;
    char character;
 
 #ifdef HELP
-   if(!strcmp(argv[2], "--help"))
+   if(!strcmp(argv[1], "--help"))
    {
       puts("echo - Prints specified messages.");
       puts("  echo [options] message");
       puts("  echo --help|--version\r\n");
       puts("Options:");
       puts("-e  Prints special characters. Message must be quoted.");
-      puts("    Characters are: \\a \\b \\c \\e \\f \\r \\t \\v \\x");
+      puts("    Characters are: \\a \\b \\c \\e \\f \\r \\t \\v");
       puts("-n  In addition, prints newline character.");
       return 0;
    }
 #endif
 
 #ifdef VERSION
-   if(!strcmp(argv[2], "--version"))
+   if(!strcmp(argv[1], "--version"))
    {
       version();
       return 0;
    }
 #endif
 
-   if(!strcmp(argv[2], "-e"))
+   if(!strcmp(argv[1], "-e"))
    {
       backslash_escapes = 1;
-      if(!strcmp(argv[3], "-n"))
+      if(!strcmp(argv[2], "-n"))
       {
          new_line = 0;
-         i = 4;
+         i = 3;
       }
       else
       {
-         i = 3;
+         i = 2;
       }  
    }
 
-   if(!strcmp(argv[2], "-n"))
+   if(!strcmp(argv[1], "-n"))
    {
       new_line = 0;
-      if(!strcmp(argv[3], "-e"))
+      if(!strcmp(argv[2], "-e"))
       {
          backslash_escapes = 1;
-         i = 4;
+         i = 3;
       }
       else
       {
-         i = 3;
+         i = 2;
       }  
    }
 
@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
             }
             else if(argv[i][j] == 'e')
             {
-               character = '\e';
+               character = 27;
             }
             else if(argv[i][j] == 'f')
             {

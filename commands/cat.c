@@ -6,14 +6,14 @@
 
 int main(int argc, char *argv[])
 {
-   int i = 2;
+   int i = 1;
    char read_buffer;
    FILE *file_resource;
    unsigned char show_ends = 0;
    unsigned char show_tabs = 0; 
 
 #ifdef HELP
-      if(!strcmp(argv[2], "--help"))
+      if(!strcmp(argv[1], "--help"))
       {
          puts("cat - Output specified file's contents.");
          puts("  cat [options] file");
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 #endif
 
 #ifdef VERSION
-      if(!strcmp(argv[2], "--version"))
+      if(!strcmp(argv[1], "--version"))
       {
          version();
          return 0;
@@ -46,11 +46,12 @@ int main(int argc, char *argv[])
       }
    }
 
-   file_resource = fopen(argv[2], "r");
+   file_resource = fopen(argv[1], "r");
 
-   read_buffer = fgetc(file_resource);
-   while(read_buffer > -1)
+   
+   while(!feof(file_resource))
    {
+      read_buffer = fgetc(file_resource);
       if(show_ends && read_buffer == '\n')
       {
          putchar('$');
@@ -63,8 +64,6 @@ int main(int argc, char *argv[])
       }
 
       putchar(read_buffer);
-
-      read_buffer = fgetc(file_resource);
    }
 
    fclose(file_resource);

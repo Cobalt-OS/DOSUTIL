@@ -11,17 +11,17 @@ int main(int argc, char *argv[])
    char *buffer = (char *)malloc(MAX_PATH_LENGTH);
    
 #ifdef HELP
-   if(!strcmp(argv[2], "--help"))
+   if(!strcmp(argv[1], "--help"))
    {
-      puts("pwd - Creates directory.");
-      puts("  pwd");
-      puts("  pwd --help|--version");
+      puts("MINIBOX pwd - Creates directory.");
+      puts("  MINIBOX pwd");
+      puts("  MINIBOX pwd --help|--version");
       return 0;
    }
 #endif
 
 #ifdef VERSION
-   else if(!strcmp(argv[2], "--version"))
+   else if(!strcmp(argv[1], "--version"))
    {
       version();
       return 0;

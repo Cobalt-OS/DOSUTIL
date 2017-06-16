@@ -4,84 +4,71 @@
 
 #include "../dosc.h"
 
-char item_remove(char *removing_item_path)   // FIX ME!
+char item_remove(char *removing_item_path)
 {
-   DIR *directory;
+   DIR *element;
    struct dirent *item_properties;
-   char *item_name = alloca(256);
-   char *item_path = alloca(260);
-   
-   directory = opendir(removing_item_path);
-   item_properties = readdir(directory);
-   
-   
-   while(strlen(item_properties->d_name))
+   char *item_name = malloc(256);
+   char *item_path = malloc(260);
+
+   element = opendir(removing_item_path);
+   item_properties = readdir(element);
+   item_name = item_properties->d_name;
+
+   while(item_name[0] != 1)
    {
-      item_name = item_properties->d_name;
-      
       if(strcmp(item_name, ".") && strcmp(item_name, "..") && (strlen(item_path) + strlen(removing_item_path) <= 258))
       {
          strcpy(item_path, removing_item_path);
          strcat(item_path, "\\");
          strcat(item_path, item_name);
-         
-         if(item_properties->d_type == DT_DIR)
+         if(remove(item_path))
          {
-             
             item_remove(item_path);
-         }
-         else
-         {
-             remove(item_path);
          }
       }
       
-      item_properties = readdir(directory);
+      item_properties = readdir(element);
+	  item_name = item_properties->d_name;
    }
    
-   closedir(directory);
-   
+   closedir(element);
+   free(item_name);
+   free(item_path);
    
    return rmdir(removing_item_path);
 }
 
 int main(int argc, char *argv[])
 {
-   int i = 2;
+   int i = 1;
    
 #ifdef HELP
-   if(!strcmp(argv[2], "--help"))
+   if(!strcmp(argv[1], "--help"))
    {
       puts("rm - Removes files.");
       puts("  rm [-r] items");
       puts("  rm --help|--version\r\n");
       puts("Option:");
       puts("-r  Remove specified directories and their contents recusively.");
-      return 0;
    }
 #endif
 
 #ifdef VERSION
-   if(!strcmp(argv[2], "--version"))
+   if(!strcmp(argv[1], "--version"))
    {
       version();
-      return 0;
    }
 #endif
-
-   if(!strcmp(argv[2], "-r"))
+   if(!strcmp(argv[1], "-r") && argc > 2)
    {
-      i++;
-
-      for(i; i < argc; i++)
+      for(i = 2; i < argc; i++)
       {
          if(item_remove(argv[i]))
          {
-            fprintf(stderr, "%s can't remove.\r\n", argv[i]);
+            fprintf(stderr, "%s can't remove.", argv[i]);
          }
       }
-      
-      return 0;
    }
    else
    {

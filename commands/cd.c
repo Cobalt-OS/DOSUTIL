@@ -1,14 +1,14 @@
-/*********************************
- * DOS Coreutils cd Command File *
- *********************************/
+/****************************************
+ * DOS Coreutils cd Command Source File *
+ ****************************************/
 
 #include "../dosc.h"
 
 int main(int argc, char *argv[])
 {
-   if(argc == 3)
+   if(argc == 2)
    {
-      if(chdir(argv[2]))
+      if(chdir(argv[1]))
       {
          fprintf(stderr, "%s doesn't directory.\r\n", argv[3]);
          return 1;

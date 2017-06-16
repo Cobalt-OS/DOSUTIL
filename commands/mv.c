@@ -7,7 +7,7 @@
 int main(int argc, char *argv[])
 {
 #ifdef HELP
-   if(argc == 3 && !strcmp(argv[2], "--help"))
+   if(argc == 2 && !strcmp(argv[1], "--help"))
    {
       puts("mv - Move and/or rename specified");
       puts("file or directory to specified directory.");
@@ -18,21 +18,21 @@ int main(int argc, char *argv[])
 #endif
 
 #ifdef VERSION
-   if(argc == 3 && !strcmp(argv[2], "--version"))
+   if(argc == 2 && !strcmp(argv[1], "--version"))
    {
       version();
       return 0;
    }
 #endif
 
-   if(argc == 4)
+   if(argc == 3)
    {
-      if(rename(argv[2], argv[3]))
+      if(rename(argv[1], argv[2]))
       { 
-         fprintf(stderr, "%s can\'t move.\r\n", argv[2]);
+         fprintf(stderr, "%s can\'t move.\r\n", argv[1]);
       }
    }
-   else if(argc < 4)
+   else if(argc < 3)
    {
       fputs("No enough arguments.\r\n", stderr);
    }

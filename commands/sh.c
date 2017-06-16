@@ -8,12 +8,12 @@
 
 int main(int argc, char *argv[])
 {
-   char *command_line = alloca(MAX_COMMAND_LINE_LENGTH);
+   char *command_line;
    
 #ifdef HELP
-   if(!strcmp(argv[2], "--help"))
+   if(!strcmp(argv[1], "--help"))
    {
-      puts("sh - DOS Coreutils shell");
+      puts("sh - Minibox shell");
       puts("  sh");
       puts("  sh --help|--version\r\n");
       puts("Note:");
@@ -23,12 +23,14 @@ int main(int argc, char *argv[])
 #endif
 
 #ifdef VERSION
-   else if(!strcmp(argv[2], "--version"))
+   else if(!strcmp(argv[1], "--version"))
    {
       version();
       return 0;
    }
 #endif
+
+   command_line = malloc(MAX_COMMAND_LINE_LENGTH);
 
    loop:
    printf("\r\n%s", "#");

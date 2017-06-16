@@ -1,15 +1,15 @@
-﻿/************************************
- * DOS Coreutils mkdir Command File *
- ************************************/
+/*******************************************
+ * DOS Coreutils mkdir Command Source File *
+ *******************************************/
 
 #include "../dosc.h"
 
 int main(int argc, char *argv[])
 {
-   int i = 2;
+   int i = 1;
 
 #ifdef HELP
-   if(!strcmp(argv[2], "--help"))
+   if(!strcmp(argv[1], "--help"))
    {
       puts("mkdir - Creates specified directories.");
       puts("  mkdir directories");
@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 #endif
 
 #ifdef VERSION
-   if(!strcmp(argv[2], "--version"))
+   if(!strcmp(argv[1], "--version"))
    {
       version();
       return 0;
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 
    for(i; i < argc; i++)
    {
-      if(mkdir(argv[i], S_IWUSR))
+      if(mkdir(argv[i]))
       {
          fprintf(stderr, "%s can't create.\r\n", argv[i]);
       }

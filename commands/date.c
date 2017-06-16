@@ -1,66 +1,65 @@
-/***********************************
- * DOS Coreutils date Command File *
- ***********************************/
+/******************************************
+ * DOS Coreutils date Command Source File *
+ ******************************************/
 
 #include "../dosc.h"
 
-#define DATE_AND_TIME_STRING_MAX 80
 
 int main(int argc, char *argv[])
 {
-   time_t datetime_time_t;
-   struct tm *datetime_tm;
-   struct date set_date;
-   struct time set_time;
-   char formatted_string[DATE_AND_TIME_STRING_MAX];
+   struct dosdate_t date;
+   struct dostime_t time;
 
 #ifdef HELP
-   if(!strcmp(argv[2], "--help"))
+   if(!strcmp(argv[1], "--help"))
    {
       puts("date - Print or set system date and time.");
-      puts("  date [-s] [Format]");
+      puts("  date [Format]");
+      puts("  date -s [Format]");
       puts("  date --help|--version\r\n");
       puts("Options:");
       puts("-s      Set system date and time.");
-      puts("Format  Specify fotmatted output string. String format is C type.");
+      puts("Format  Specify fotmatted output string. String format is C printf type.");
+      puts("        Example: \"%d-%d-%d %d:%d%:%d\"");
+      puts("        Default format is ISO type.");
       return 0;
    }
 #endif
 
 #ifdef VERSION
-   if(!strcmp(argv[2], "--version"))
+   if(!strcmp(argv[1], "--version"))
    {
       version();
       return 0;
    }
 #endif
 
-   datetime_time_t = time(NULL);
-
-   if(argc < 3)
+   if(argc < 2)
    {
-      puts(ctime(&datetime_time_t));
-	  return 0;
+      _dos_getdate(&date);
+      _dos_gettime(&time);
+      printf("%4hu-%2hhu-%2hhu %2hhu:%2hhu:%2hhu", date.year, date.month, date.day, time.hour, time.minute, time.second);
+      return 0;
    }
-   else if(argc >= 3)
+   else if(argc >= 2)
    {
-      if(!strcmp(argv[2], "-s"))
+      if(!strcmp(argv[1], "-s"))
       {
-         sscanf(argv[3], "%4hu-%2hhu-%2hhu %2hhu:%2hhu:%2hhu", &(set_date.da_year), &(set_date.da_mon), &(set_date.da_day), &(set_time.ti_hour), &(set_time.ti_min), &(set_time.ti_sec));
-		 
-		 printf("%d:%d:%d", set_date.da_year, set_date.da_mon, set_date.da_day);
-		 
-		 setdate(&set_date);
-		 settime(&set_time);
-		 
+         sscanf(argv[2], "%4hu-%2hhu-%2hhu %2hhu:%2hhu:%2hhu", &(date.year), &(date.month), &(date.day), &(time.hour), &(time.minute), &(time.second));
+         
+         _dos_setdate(&date);
+         _dos_settime(&time);
+         
          return 0;
       }
       else
       {
-         datetime_tm = localtime(&datetime_time_t);
-         strftime(formatted_string, DATE_AND_TIME_STRING_MAX, argv[2], datetime_tm);
-         puts(formatted_string);
+         _dos_getdate(&date);
+         _dos_gettime(&time);
+         printf(argv[1], date.year, date.month, date.day, time.hour, time.minute, time.second);
          return 0;
       }
    }
+   
+   return 0;
 }

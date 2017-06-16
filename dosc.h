@@ -3,18 +3,16 @@
  **********************************/
 
 #include <conio.h>
-#include <dirent.h>
+#include <direct.h>
 #include <dos.h>
 #include <errno.h>
+#include <graph.h>
 #include <stdio.h>
-#include <pc.h>
 #include <stdlib.h>
 #include <string.h>
-#include <sys/ioctl.h>
 #include <sys/stat.h>
-#include <sys/time.h>
-#include <unistd.h>
 #include <time.h>
+#include <unistd.h>
 #include "config.h"
 
 void version(void)
