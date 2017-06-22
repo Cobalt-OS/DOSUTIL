@@ -1,6 +1,6 @@
-/*********************************
- * DOS Coreutils rm Command File *
- *********************************/
+/****************************************
+ * DOS Coreutils rm Command Source File *
+ ****************************************/
 
 #include "../dosc.h"
 
@@ -29,7 +29,7 @@ char item_remove(char *removing_item_path)
       }
       
       item_properties = readdir(element);
-	  item_name = item_properties->d_name;
+      item_name = item_properties->d_name;
    }
    
    closedir(element);

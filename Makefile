@@ -1,60 +1,71 @@
-all:
-	wcc -0 -s commands\beep.c -fo=commands\beep.obj
-	wlink file commands\beep.obj
+CC = wcc
+CFLAGS = -0 -bt=DOS -s
+LD = wlink
+
+all: commands\*.c
+	$(CC) $(CFLAGS) commands\beep.c -fo=commands\beep.obj
+	$(LD) file commands\beep.obj
 	upx -9 commands\beep.exe
 	
-	wcc -0 -s commands\cat.c -fo=commands\cat.obj
-	wlink file commands\cat.obj
+	$(CC) $(CFLAGS) commands\cat.c -fo=commands\cat.obj
+	$(LD) file commands\cat.obj
 	upx -9 commands\cat.exe
 	
-	wcc -0 -s commands\cd.c  -fo=commands\cd.obj
-	wlink file commands\cd.obj
+	$(CC) $(CFLAGS) commands\cd.c -fo=commands\cd.obj
+	$(LD) file commands\cd.obj
 	upx -9 commands\cd.exe
 	
-	wcc -0 -s commands\clear.c -fo=commands\clear.obj
-	wlink file commands\clear.obj
+	$(CC) $(CFLAGS) commands\clear.c -fo=commands\clear.obj
+	$(LD) file commands\clear.obj
 	upx -9 commands\clear.exe
 	
-	wcc -0 -s commands\cp.c  -fo=commands\cp.obj
-	wlink file commands\cp.obj
+	$(CC) $(CFLAGS) commands\cp.c -fo=commands\cp.obj
+	$(LD) file commands\cp.obj
 	upx -9 commands\cp.exe
 	
-	wcc -0 -s commands\date.c  -fo=commands\date.obj
-	wlink file commands\date.obj
+	$(CC) $(CFLAGS) commands\date.c -fo=commands\date.obj
+	$(LD) file commands\date.obj
 	upx -9 commands\date.exe
 	
-	wcc -0 -s commands\echo.c  -fo=commands\echo.obj
-	wlink file commands\echo.obj
+	$(CC) $(CFLAGS) commands\echo.c -fo=commands\echo.obj
+	$(LD) file commands\echo.obj
 	upx -9 commands\echo.exe
 	
-	wcc -0 -s commands\ls.c  -fo=commands\ls.obj
-	wlink file commands\ls.obj
+	$(CC) $(CFLAGS) commands\help.c -fo=commands\help.obj
+	$(LD) file commands\help.obj
+	upx -9 commands\help.exe
+	
+	$(CC) $(CFLAGS) commands\ls.c -fo=commands\ls.obj
+	$(LD) file commands\ls.obj
 	upx -9 commands\ls.exe
 	
-	wcc -0 -s commands\mkdir.c  -fo=commands\mkdir.obj
-	wlink file commands\mkdir.obj
+	$(CC) $(CFLAGS) commands\mkdir.c -fo=commands\mkdir.obj
+	$(LD) file commands\mkdir.obj
 	upx -9 commands\mkdir.exe
 	
-	wcc -0 -s commands\mv.c  -fo=commands\mv.obj
-	wlink file commands\mv.obj
+	$(CC) $(CFLAGS) commands\mv.c -fo=commands\mv.obj
+	$(LD) file commands\mv.obj
 	upx -9 commands\mv.exe
 	
-	wcc -0 -s commands\pwd.c  -fo=commands\pwd.obj
-	wlink file commands\pwd.obj
+	$(CC) $(CFLAGS) commands\pwd.c -fo=commands\pwd.obj
+	$(LD) file commands\pwd.obj
 	upx -9 commands\pwd.exe
 	
-	wcc -0 -s commands\rm.c  -fo=commands\rm.obj
-	wlink file commands\rm.obj
+	$(CC) $(CFLAGS) commands\rm.c -fo=commands\rm.obj
+	$(LD) file commands\rm.obj
 	upx -9 commands\rm.exe
 	
-	wcc -0 -s commands\rmdir.c  -fo=commands\rmdir.obj
-	wlink file commands\rmdir.obj
+	$(CC) $(CFLAGS) commands\rmdir.c -fo=commands\rmdir.obj
+	$(LD) file commands\rmdir.obj
 	upx -9 commands\rmdir.exe
 	
-	wcc -0 -s commands\sh.c  -fo=commands\sh.obj
-	wlink file commands\sh.obj
+	$(CC) $(CFLAGS) commands\sh.c -fo=commands\sh.obj
+	$(LD) file commands\sh.obj
 	upx -9 commands\sh.exe
 	
-	wcc -0 -s commands\time.c  -fo=commands\time.obj
-	wlink file commands\time.obj
+	$(CC) $(CFLAGS) commands\time.c -fo=commands\time.obj
+	$(LD) file commands\time.obj
 	upx -9 commands\time.exe
+	
+clean-obj: commands\*.obj
+	del commands\*.obj

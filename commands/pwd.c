@@ -13,9 +13,9 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(!strcmp(argv[1], "--help"))
    {
-      puts("MINIBOX pwd - Creates directory.");
-      puts("  MINIBOX pwd");
-      puts("  MINIBOX pwd --help|--version");
+      puts("pwd - Creates directory.");
+      puts("  pwd");
+      puts("  pwd --help|--version");
       return 0;
    }
 #endif

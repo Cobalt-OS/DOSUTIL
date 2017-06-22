@@ -17,5 +17,5 @@
 
 void version(void)
 {
-   puts("DOS Coreutils Version: 0.2");
+   puts("DOS Coreutils Version: 0.3");
 }

@@ -1,6 +1,6 @@
-/************************************
- * DOS Coreutils rmdir Command File *
- ************************************/
+/*******************************************
+ * DOS Coreutils rmdir Command Source File *
+ *******************************************/
 
 #include "../dosc.h"
 
@@ -11,9 +11,9 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(!strcmp(argv[1], "--help"))
    {
-      puts("MINIBOX main - Removes specified directories.");
-      puts("  MINIBOX main directories");
-      puts("  MINIBOX main --help|--version");
+      puts("rmdir - Removes specified directories.");
+      puts("  rmdir directories");
+      puts("  rmdir --help|--version");
       return 0;
    }
 #endif

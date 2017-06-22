@@ -1,4 +1,4 @@
-DOS Coreutils 0.2
+DOS Coreutils 0.1
 
 Linux commands in DOS.
 
@@ -12,8 +12,8 @@ Usage:
 
 Compile:
 
-  The program must be compiled with Open Watcom and
-  optionally should compressed with UPX. Compression
+  The program must be compiled with DJGPP and
+  optionally should compressed with UPX. Compreesing
   with UPX is default.
   
 Commands:
@@ -25,6 +25,7 @@ Commands:
   cp
   date
   echo
+  help
   ls
   mkdir
   mv

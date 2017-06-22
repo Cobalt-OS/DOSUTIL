@@ -1,6 +1,6 @@
-/**********************************
- * DOS Coreutils sh Command  File *
- **********************************/
+/****************************************
+ * DOS Coreutils sh Command Source File *
+ ****************************************/
 
 #include "../dosc.h"
 
@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
       puts("  sh");
       puts("  sh --help|--version\r\n");
       puts("Note:");
-      puts("  In DOS Coreutils shell, type exit to exit shell.");
+      puts("  In DOS Coreutils shell, type \"exit\" to exit shell.");
       return 0;
    }
 #endif
