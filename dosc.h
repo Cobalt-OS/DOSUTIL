@@ -15,6 +15,8 @@
 #include <unistd.h>
 #include "config.h"
 
+#define MAX_COMMAND_LINE_LENGTH 1024
+
 void version(void)
 {
    puts("DOS Coreutils Version: 0.3");

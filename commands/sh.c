@@ -4,8 +4,6 @@
 
 #include "../dosc.h"
 
-#define MAX_COMMAND_LINE_LENGTH 1024
-
 int main(int argc, char *argv[])
 {
    char *command_line;
@@ -13,7 +11,7 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(!strcmp(argv[1], "--help"))
    {
-      puts("sh - Minibox shell");
+      puts("sh - DOS Coreuils shell");
       puts("  sh");
       puts("  sh --help|--version\r\n");
       puts("Note:");
