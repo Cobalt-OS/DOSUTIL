@@ -4,66 +4,66 @@ LD = wlink
 LDFLAGS = option eliminate option vfremoval
 UPXFLAGS = -9 --8086 --ultra-brute --crp-ms=999999
 
-all: commands\beep.exe commands\cat.exe commands\cd.exe commands\clear.exe commands\cp.exe commands\date.exe commands\echo.exe commands\help.exe commands\ls.exe commands\mkdir.exe commands\mv.exe commands\pwd.exe commands\rm.exe commands\rmdir.exe commands\sh.exe commands\time.exe
+all: commands\beep.com commands\cat.com commands\cd.com commands\clear.exe commands\cp.com commands\date.com commands\echo.com commands\help.com commands\ls.exe commands\mkdir.com commands\mv.com commands\pwd.com commands\rm.com commands\rmdir.com commands\sh.com commands\time.exe
 
-commands\beep.exe: commands\beep.obj
-	$(LD) $(LDFLAGS) file $?
+commands\beep.com: commands\beep.obj
+	$(LD) $(LDFLAGS) system com file $?
 	upx $(UPXFLAGS) $@
 
-commands\cat.exe: commands\cat.obj
-	$(LD) $(LDFLAGS) file $?
+commands\cat.com: commands\cat.obj
+	$(LD) $(LDFLAGS) system com file $?
 	upx $(UPXFLAGS) $@
 
-commands\cd.exe: commands\cd.obj
-	$(LD) $(LDFLAGS) file $?
+commands\cd.com: commands\cd.obj
+	$(LD) $(LDFLAGS) system com file $?
 	upx $(UPXFLAGS) $@
 
 commands\clear.exe: commands\clear.obj
 	$(LD) $(LDFLAGS) file $?
 	upx $(UPXFLAGS) $@
 
-commands\cp.exe: commands\cp.obj
-	$(LD) $(LDFLAGS) file $?
+commands\cp.com: commands\cp.obj
+	$(LD) $(LDFLAGS) system com file $?
 	upx $(UPXFLAGS) $@
 
-commands\date.exe: commands\date.obj
-	$(LD) $(LDFLAGS) file $?
+commands\date.com: commands\date.obj
+	$(LD) $(LDFLAGS) system com file $?
 	upx $(UPXFLAGS) $@
 
-commands\echo.exe: commands\echo.obj
-	$(LD) $(LDFLAGS) file $?
+commands\echo.com: commands\echo.obj
+	$(LD) $(LDFLAGS) system com file $?
 	upx $(UPXFLAGS) $@
 
-commands\help.exe: commands\help.obj
-	$(LD) $(LDFLAGS) file $?
+commands\help.com: commands\help.obj
+	$(LD) $(LDFLAGS) system com file $?
 	upx $(UPXFLAGS) $@
 
 commands\ls.exe: commands\ls.obj
 	$(LD) $(LDFLAGS) file $?
 	upx $(UPXFLAGS) $@
 
-commands\mkdir.exe: commands\mkdir.obj
-	$(LD) $(LDFLAGS) file $?
+commands\mkdir.com: commands\mkdir.obj
+	$(LD) $(LDFLAGS) system com file $?
 	upx $(UPXFLAGS) $@
 
-commands\mv.exe: commands\mv.obj
-	$(LD) $(LDFLAGS) file $?
+commands\mv.com: commands\mv.obj
+	$(LD) $(LDFLAGS) system com file $?
 	upx $(UPXFLAGS) $@
 
-commands\pwd.exe: commands\pwd.obj
-	$(LD) $(LDFLAGS) file $?
+commands\pwd.com: commands\pwd.obj
+	$(LD) $(LDFLAGS) system com file $?
 	upx $(UPXFLAGS) $@
 
-commands\rm.exe: commands\rm.obj
-	$(LD) $(LDFLAGS) file $?
+commands\rm.com: commands\rm.obj
+	$(LD) $(LDFLAGS) system com file $?
 	upx $(UPXFLAGS) $@
 
-commands\rmdir.exe: commands\rmdir.obj
-	$(LD) $(LDFLAGS) file $?
+commands\rmdir.com: commands\rmdir.obj
+	$(LD) $(LDFLAGS) system com file $?
 	upx $(UPXFLAGS) $@
 	
-commands\sh.exe: commands\sh.obj
-	$(LD) $(LDFLAGS) file $?
+commands\sh.com: commands\sh.obj
+	$(LD) $(LDFLAGS) system com file $?
 	upx $(UPXFLAGS) $@
 
 commands\time.exe: commands\time.obj
