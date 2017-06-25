@@ -4,8 +4,6 @@
 
 #include "../dosc.h"
 
-#define MAX_COMMAND_LINE_LENGTH 1024
-
 int main(int argc, char *argv[])
 {
    int i = 0;
