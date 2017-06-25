@@ -4,8 +4,6 @@
 
 #include "../dosc.h"
 
-#define MAX_PATH_LENGTH 260
-
 int main(int argc, char *argv[])
 {
    char *buffer = (char *)malloc(MAX_PATH_LENGTH);

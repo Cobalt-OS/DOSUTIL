@@ -4,8 +4,6 @@
 
 #include "../dosc.h"
 
-#define MAX_PATH_LENGTH 260
-
 void path_current_directory(char *path)
 {
    getcwd(path, MAX_PATH_LENGTH);

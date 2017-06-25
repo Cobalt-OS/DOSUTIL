@@ -16,6 +16,7 @@
 #include "config.h"
 
 #define MAX_COMMAND_LINE_LENGTH 1024
+#define MAX_PATH_LENGTH 260
 
 void version(void)
 {

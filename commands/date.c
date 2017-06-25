@@ -4,7 +4,6 @@
 
 #include "../dosc.h"
 
-
 int main(int argc, char *argv[])
 {
    struct dosdate_t date;
