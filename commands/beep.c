@@ -11,24 +11,24 @@ int main(int argc, char *argv[])
    int length = 1000;
 
 #ifdef HELP
-      if(!strcmp(argv[i], "--help"))
-      {
-         puts("beep - Output sound from PC speaker.");
-         puts("  beep [options]");
-         puts("  beep --help|--version\r\n");
-         puts("Options:");
-         puts("  -f Frequency: Specify sound's frequency.");
-         puts("  -l Length: Specify sound's length as milliseconds.");
-         return 0;
-      }
+   if(!strcmp(argv[i], "--help"))
+   {
+      puts("beep - Output sound from PC speaker.");
+      puts("  beep [options]");
+      puts("  beep --help|--version\r\n");
+      puts("Options:");
+      puts("  -f Frequency: Specify sound's frequency.");
+      puts("  -l Length: Specify sound's length as milliseconds.");
+      return 0;
+   }
 #endif
 
 #ifdef VERSION
-      if(!strcmp(argv[i], "--version"))
-      {
-         version();
-         return 0;
-      }
+   if(!strcmp(argv[i], "--version"))
+   {
+      version();
+      return 0;
+   }
 #endif
 
    for(i; i < argc; i++)

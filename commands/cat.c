@@ -13,24 +13,24 @@ int main(int argc, char *argv[])
    unsigned char show_tabs = 0; 
 
 #ifdef HELP
-      if(!strcmp(argv[1], "--help"))
-      {
-         puts("cat - Output specified file's contents.");
-         puts("  cat [options] file");
-         puts("  cat --help|--version\r\n");
-         puts("Options:");
-         puts("  -E: Ends are shown as \"$\".");
-         puts("  -T: Tabs are shown as \"^I\".");
-         return 0;
-      }
+   if(!strcmp(argv[1], "--help"))
+   {
+      puts("cat - Output specified file's contents.");
+      puts("  cat [options] file");
+      puts("  cat --help|--version\r\n");
+      puts("Options:");
+      puts("  -E: Ends are shown as \"$\".");
+      puts("  -T: Tabs are shown as \"^I\".");
+      return 0;
+   }
 #endif
 
 #ifdef VERSION
-      if(!strcmp(argv[1], "--version"))
-      {
-         version();
-         return 0;
-      }
+   if(!strcmp(argv[1], "--version"))
+   {
+      version();
+      return 0;
+   }
 #endif
 
    for(i; i < argc; i++)

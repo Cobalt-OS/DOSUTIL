@@ -18,7 +18,9 @@
 #define MAX_COMMAND_LINE_LENGTH 1024
 #define MAX_PATH_LENGTH 260
 
+#ifdef VERSION
 void version(void)
 {
-   puts("DOS Coreutils Version: 0.3");
+   puts("DOS Coreutils Version: 0.4");
 }
+#endif
