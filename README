@@ -12,7 +12,7 @@ Usage:
 
 Compile:
 
-  The program must be compiled with DJGPP and
+  The program must be compiled with Open Watcom and
   optionally should compressed with UPX. Compressing
   with UPX is default.
   
