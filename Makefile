@@ -2,73 +2,56 @@ CC = wcc
 CFLAGS = -oneatx -ohirbk -ol -ol+ -oi -ei -zp4 -0 -s -ri -ms /bt=dos
 LD = wlink
 LDFLAGS = option eliminate option vfremoval
-UPXFLAGS = -9 --8086 --ultra-brute --crp-ms=999999
 
 all: commands\beep.com commands\cat.com commands\cd.com commands\clear.exe commands\cp.com commands\date.com commands\echo.com commands\help.com commands\ls.exe commands\mkdir.com commands\mv.com commands\pwd.com commands\rm.com commands\rmdir.com commands\sh.com commands\time.exe
 
 commands\beep.com: commands\beep.obj
 	$(LD) $(LDFLAGS) system com file $?
-	upx $(UPXFLAGS) $@
 
 commands\cat.com: commands\cat.obj
 	$(LD) $(LDFLAGS) system com file $?
-	upx $(UPXFLAGS) $@
 
 commands\cd.com: commands\cd.obj
 	$(LD) $(LDFLAGS) system com file $?
-	upx $(UPXFLAGS) $@
 
 commands\clear.exe: commands\clear.obj
 	$(LD) $(LDFLAGS) file $?
-	upx $(UPXFLAGS) $@
 
 commands\cp.com: commands\cp.obj
 	$(LD) $(LDFLAGS) system com file $?
-	upx $(UPXFLAGS) $@
 
 commands\date.com: commands\date.obj
 	$(LD) $(LDFLAGS) system com file $?
-	upx $(UPXFLAGS) $@
 
 commands\echo.com: commands\echo.obj
 	$(LD) $(LDFLAGS) system com file $?
-	upx $(UPXFLAGS) $@
 
 commands\help.com: commands\help.obj
 	$(LD) $(LDFLAGS) system com file $?
-	upx $(UPXFLAGS) $@
 
 commands\ls.exe: commands\ls.obj
 	$(LD) $(LDFLAGS) file $?
-	upx $(UPXFLAGS) $@
 
 commands\mkdir.com: commands\mkdir.obj
 	$(LD) $(LDFLAGS) system com file $?
-	upx $(UPXFLAGS) $@
 
 commands\mv.com: commands\mv.obj
 	$(LD) $(LDFLAGS) system com file $?
-	upx $(UPXFLAGS) $@
 
 commands\pwd.com: commands\pwd.obj
 	$(LD) $(LDFLAGS) system com file $?
-	upx $(UPXFLAGS) $@
 
 commands\rm.com: commands\rm.obj
 	$(LD) $(LDFLAGS) system com file $?
-	upx $(UPXFLAGS) $@
 
 commands\rmdir.com: commands\rmdir.obj
 	$(LD) $(LDFLAGS) system com file $?
-	upx $(UPXFLAGS) $@
 	
 commands\sh.com: commands\sh.obj
 	$(LD) $(LDFLAGS) system com file $?
-	upx $(UPXFLAGS) $@
 
 commands\time.exe: commands\time.obj
 	$(LD) $(LDFLAGS) file $?
-	upx $(UPXFLAGS) $@
 
 commands\beep.obj: commands\beep.c
 	$(CC) $(CFLAGS) $? -fo=$@

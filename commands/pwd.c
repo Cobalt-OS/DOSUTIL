@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(!strcmp(argv[1], "--help"))
    {
-      puts("pwd - Creates directory.");
+      puts("pwd - Outputs current directory.");
       puts("  pwd");
       puts("  pwd --help|--version");
       return 0;
