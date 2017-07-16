@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 
    loop:
    printf("\r\n%s", "#");
-   gets(command_line);
+   gets_s(command_line, MAX_COMMAND_LINE_LENGTH);
    
    if(strcmp(command_line, "exit") && strcmp(command_line, ""))
    {

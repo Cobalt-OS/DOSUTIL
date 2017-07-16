@@ -50,12 +50,14 @@ int main(int argc, char *argv[])
       _dos_gettime(&end);
       measured_time = (long double)(((end.second - start.second) * 100 + end.hsecond) - start.hsecond) / 100;
 
-      printf("%.2llf", measured_time);
+      printf("%.2Lf", measured_time);
    }
    else
    {
       puts("No enough arguments.");
    }
    
+   free(command_line);
+
    return 0;
 }

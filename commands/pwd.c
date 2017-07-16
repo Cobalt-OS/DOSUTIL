@@ -6,7 +6,7 @@
 
 int main(int argc, char *argv[])
 {
-   char *buffer = (char *)malloc(MAX_PATH_LENGTH);
+   char *buffer;
    
 #ifdef HELP
    if(!strcmp(argv[1], "--help"))
@@ -14,7 +14,6 @@ int main(int argc, char *argv[])
       puts("pwd - Outputs current directory.");
       puts("  pwd");
       puts("  pwd --help|--version");
-      return 0;
    }
 #endif
 
@@ -22,16 +21,15 @@ int main(int argc, char *argv[])
    else if(!strcmp(argv[1], "--version"))
    {
       version();
-      return 0;
    }
 #endif
 
    else
    {
+      buffer = (char *)malloc(MAX_PATH_LENGTH);
       puts(getcwd(buffer, MAX_PATH_LENGTH));
+      free(buffer);
    }
-
-   free(buffer);
 
    return 0;
 }

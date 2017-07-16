@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
       printf("%4hu-%2hhu-%2hhu %2hhu:%2hhu:%2hhu", date.year, date.month, date.day, time.hour, time.minute, time.second);
       return 0;
    }
-   else if(argc >= 2)
+   else
    {
       if(!strcmp(argv[1], "-s"))
       {
