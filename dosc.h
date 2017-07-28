@@ -15,12 +15,9 @@
 #include <unistd.h>
 #include "config.h"
 
-#define MAX_COMMAND_LINE_LENGTH 1024
-#define MAX_PATH_LENGTH 260
-
 #ifdef VERSION
 void version(void)
 {
-   puts("DOS Coreutils Version: 0.4");
+   puts("DOS Coreutils Version: 0.5");
 }
 #endif

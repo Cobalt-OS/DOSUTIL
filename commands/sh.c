@@ -28,19 +28,20 @@ int main(int argc, char *argv[])
    }
 #endif
 
-   command_line = malloc(MAX_COMMAND_LINE_LENGTH);
+   command_line = (char *) malloc(MAX_COMMAND_LINE_LENGTH);
 
    loop:
-   printf("\r\n%s", "#");
-   gets_s(command_line, MAX_COMMAND_LINE_LENGTH);
-   
-   if(strcmp(command_line, "exit") && strcmp(command_line, ""))
-   {
-      system(command_line);
-   }
-   else if(!strcmp(command_line, "exit"))
+
+   printf("\r\n#");
+   fgets(command_line, MAX_COMMAND_LINE_LENGTH, stdin);
+
+   if(!strcmp(command_line, "exit\n"))
    {
       exit(0);
+   }
+   else
+   {
+      system(command_line);
    }
 
    goto loop;

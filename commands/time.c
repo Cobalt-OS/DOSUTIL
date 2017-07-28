@@ -57,7 +57,5 @@ int main(int argc, char *argv[])
       puts("No enough arguments.");
    }
    
-   free(command_line);
-
    return 0;
 }

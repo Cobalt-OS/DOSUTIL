@@ -13,7 +13,7 @@ char item_remove(char *removing_item_path)
 
    element = opendir(removing_item_path);
    item_properties = readdir(element);
-   *item_name = item_properties->d_name;
+   item_name = item_properties->d_name;
 
    while(item_name[0] != 1)
    {
