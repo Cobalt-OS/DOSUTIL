@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
    {
       exit(0);
    }
-   else
+   else if(strcmp(command_line, "\n"))
    {
       system(command_line);
    }
