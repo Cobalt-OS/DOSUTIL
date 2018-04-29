@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 #ifdef HELP
     if(!strcmp(argv[1], "--help"))
     {
-        puts("clear - Clears the terminal screen.");
+        puts(CLEAR_CLEAR_THE_TERMINAL_SCREEN);
         puts("  clear");
         puts("  clear --help|--version\r\n");
         return 0;

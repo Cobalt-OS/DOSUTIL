@@ -11,8 +11,8 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(!strcmp(argv[1], "--help"))
    {
-      puts("mkdir - Creates specified directories.");
-      puts("  mkdir directories");
+      puts(MKDIR_CREATES_SPECIFIED_DIRECTORIES);
+      puts(MKDIR_DIRECTORIES);
       puts("  mkdir --help|--version");
       return 0;
    }
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
    {
       if(mkdir(argv[i]))
       {
-         fprintf(stderr, "%s can't create.\r\n", argv[i]);
+         fprintf(stderr, CAN_T_CREATE, argv[i]);
       }
    }
 

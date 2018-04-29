@@ -16,13 +16,13 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(!strcmp(argv[1], "--help"))
    {
-      puts("echo - Prints specified messages.");
-      puts("  echo [options] message");
+      puts(ECHO_PRINT_SPECIFIED_MESSAGES);
+      puts(ECHO_OPTIONS_MESSAGES);
       puts("  echo --help|--version\r\n");
-      puts("Options:");
-      puts("-e  Prints special characters. Message must be quoted.");
-      puts("    Characters are: \\a \\b \\c \\e \\f \\r \\t \\v");
-      puts("-n  In addition, prints newline character.");
+      puts(OPTIONS);
+      puts(E_PRINTS_SPECIAL_CHARACTERS_MESSAGE_MUST_BE_QUOTED);
+      puts(CHARACTERS_ARE);
+      puts(IN_ADDITION_PRINTS_NEWLINE_CHARACTER);
       return 0;
    }
 #endif

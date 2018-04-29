@@ -46,11 +46,12 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(!strcmp(argv[1], "--help"))
    {
-      puts("rm - Removes files.");
-      puts("  rm [-r] items");
+      puts(RM_REMOVE_SPECIFIED_FILES);
+      puts(RM_R_ITEMS);
       puts("  rm --help|--version\r\n");
-      puts("Option:");
-      puts("-r  Remove specified directories and their contents recusively.");
+      puts(OPTION);
+      puts(R_REMOVE_SPECIFIED_DIRECTORIES_AND_THEIR_CONTENTS_RECURSIVELY);
+      return 0;
    }
 #endif
 
@@ -58,6 +59,7 @@ int main(int argc, char *argv[])
    if(!strcmp(argv[1], "--version"))
    {
       version();
+      return 0;
    }
 #endif
    if(!strcmp(argv[1], "-r") && argc > 2)
@@ -66,7 +68,7 @@ int main(int argc, char *argv[])
       {
          if(item_remove(argv[i]))
          {
-            fprintf(stderr, "%s can't remove.", argv[i]);
+            fprintf(stderr, CAN_T_REMOVE, argv[i]);
          }
       }
    }
@@ -76,7 +78,7 @@ int main(int argc, char *argv[])
       {
          if(remove(argv[i]))
          {
-            fprintf(stderr, "%s can't remove.\r\n", argv[i]);
+            fprintf(stderr, CAN_T_REMOVE, argv[i]);
          }
       }
    }

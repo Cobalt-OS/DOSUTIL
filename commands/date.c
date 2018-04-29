@@ -12,15 +12,15 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(!strcmp(argv[1], "--help"))
    {
-      puts("date - Print or set system date and time.");
-      puts("  date [Format]");
-      puts("  date -s [Format]");
+      puts(DATE_PRINT_OR_SET_SYSTEM_DATE_AND_TIME);
+      puts(DATE_FORMAT);
+      puts(DATE_S_FORMAT);
       puts("  date --help|--version\r\n");
-      puts("Options:");
-      puts("-s      Set system date and time.");
-      puts("Format  Specify fotmatted output string. String format is C printf type.");
-      puts("        Example: \"%d-%d-%d %d:%d%:%d\"");
-      puts("        Default format is ISO type.");
+      puts(OPTIONS);
+      puts(S_SYSTEM_DATE_AND_TIME);
+      puts(FORMAT_SPECIFIY_FORMATTED_OUTPUT_STRING_STRING_FORMAT_IS_C_PRINTF_TYPE);
+      puts(EXAMPLE);
+      puts(DEFAULT_FORMAT_IS_ISO_TYPE);
       return 0;
    }
 #endif

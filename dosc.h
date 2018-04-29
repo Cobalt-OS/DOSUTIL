@@ -14,10 +14,12 @@
 #include <time.h>
 #include <unistd.h>
 #include "config.h"
+#include "lang\en.h"
+#include "lang\tr.h"
 
 #ifdef VERSION
 void version(void)
 {
-   puts("DOS Coreutils Version: 0.5");
+   puts(DOS_COREUTILS_VERSION);
 }
 #endif

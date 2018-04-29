@@ -11,8 +11,8 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(!strcmp(argv[1], "--help"))
    {
-      puts("rmdir - Removes specified directories.");
-      puts("  rmdir directories");
+      puts(RMDIR_REMOVE_SPECIFIED_DIRECTORIES);
+      puts(RMDIR_DIRECTORIES);
       puts("  rmdir --help|--version");
       return 0;
    }
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
    {
       if(rmdir(argv[i]))
       {
-         fprintf(stderr, "%s can\'t remove.\r\n", argv[i]);
+         fprintf(stderr, CAN_T_REMOVE, argv[i]);
       }
    }
 

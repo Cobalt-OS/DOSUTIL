@@ -31,13 +31,13 @@ int main(int argc, char *argv[])
 #ifdef HELP
       if(!strcmp(argv[1], "--help"))
       {
-         puts("ls - List directory contents.");
-         puts("  ls [options] [file]");
+         puts(LS_LIST_DIRECTORY_CONTENTS);
+         puts(LS_OPTIONS_FILE);
          puts("  ls --help|--version\r\n");
-         puts("Options:");
-         puts("-1  Display output as one column.");
-         puts("-a  Don't ignore \".\" and \"..\".");
-         puts("-l  Display long listing format.");
+         puts(OPTIONS);
+         puts(L_DISPLAY_OUTPUT_AS_ONE_COLUMN);
+         puts(A_DON_T_IGNORE_AND);
+         puts(L_DISPLAY_LONG_LISTING_FORMAT);
          return 0;
       }
 #endif

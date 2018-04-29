@@ -9,9 +9,9 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(argc == 2 && !strcmp(argv[1], "--help"))
    {
-      puts("mv - Move and/or rename specified");
-      puts("file or directory to specified directory.");
-      puts("  mv source destination");
+      puts(MV_MOVE_AND_OR_RENAME_SPECIFIED_FILE_OR_DIRECTORY_TO_SPECIFIED_DIRECTORY_1);
+      puts(MV_MOVE_AND_OR_RENAME_SPECIFIED_FILE_OR_DIRECTORY_TO_SPECIFIED_DIRECTORY_2);
+      puts(MV_SOURCE_DESTINATION);
       puts("  mv --help|--version");
       return 0;
    }
@@ -34,11 +34,11 @@ int main(int argc, char *argv[])
    }
    else if(argc < 3)
    {
-      fputs("No enough arguments.\r\n", stderr);
+      fputs(NO_ENOUGH_ARGUMENTS, stderr);
    }
    else
    {
-      fputs("Too much arguments.\r\n", stderr);
+      fputs(TOO_MUCH_ARGUMENTS, stderr);
    }
 
    return 0;

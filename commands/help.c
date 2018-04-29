@@ -8,7 +8,7 @@
 
 int main(void)
 {
-   puts("DOS Coreutils 0.3 Commands:\r\n");
+   puts(DOS_COREUTILS_COMMANDS);
    puts("beep");
    puts("cat");
    puts("cd");

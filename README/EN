@@ -1,0 +1,60 @@
+DOS Coreutils 0.6
+
+Small Linux commands in DOS.
+
+Copyright (C) 2018 Ercan Ersoy
+This program is free software. (GNU General Public License)
+
+Usage:
+
+  command [Arguments]
+  command --help|--version
+
+Compile:
+
+  This software must be compiled with Open Watcom.
+  
+Commands:
+
+  beep
+  cat
+  cd
+  clear
+  cp
+  date
+  echo
+  help
+  ls
+  mkdir
+  mv
+  pwd
+  rm
+  rmdir
+  sh
+  time
+  
+  Argument --help is for help.
+  Argument --version is for version information.
+
+Changelog:
+
+  0.6 (04-29-2018): Switch GNU GPL Version 2 to GNU GPL Version 3. Fix
+  typos. Some code fixes. Translate Turkish language. Compile newer
+  Open Watcom. Change directory tree. Changelog added on source
+  documents.
+
+  0.5 (07-28-2017): Fix typos. Some changes and code fixes. Update
+  README.
+
+  0.4 (06-24-2017): Fix typos. Some changes and code fixes. Some .exe
+  files have updated to .com files.
+
+  0.3 (06-22-2017): Fix typos. Some changes of Makefile. Add .gitignore
+  file.
+
+  0.2 (06-16-2017): Fix bugs. Fix typos. Change toolchain to Open
+  Watcom. Executable files have converted 16 bit.
+
+  0.1 (06-12-2017): Create first version.
+
+  0.1 (12.06.2017): Create first version.

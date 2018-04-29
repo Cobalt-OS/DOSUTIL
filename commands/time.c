@@ -15,8 +15,8 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(argc == 2 && !strcmp(argv[1], "--help"))
    {
-      puts("time - Measure specified command's execution time as second.");
-      puts("  time command [argument]");
+      puts(TIME_MEASURE_SPECIFIED_COMMAND_S_EXECUTION_TIME_AS_SECOND);
+      puts(TIME_COMMAND_ARGUMENT);
       puts("  time --help|--version");
       return 0;
    }
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
    }
    else
    {
-      puts("No enough arguments.");
+      puts(NO_ENOUGH_ARGUMENTS);
    }
    
    return 0;

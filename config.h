@@ -4,6 +4,8 @@
 
 // Common Configures
 
+#define LANGUAGE TR // EN ot TR
+
 #define HELP 1
 #define VERSION 1
 

@@ -13,12 +13,12 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(!strcmp(argv[i], "--help"))
    {
-      puts("beep - Output sound from PC speaker.");
-      puts("  beep [options]");
+      puts(BEEP_OUTPUT_FROM_PC_SPEAKER);
+      puts(BEEP_OPTIONS);
       puts("  beep --help|--version\r\n");
-      puts("Options:");
-      puts("  -f Frequency: Specify sound's frequency.");
-      puts("  -l Length: Specify sound's length as milliseconds.");
+      puts(OPTIONS);
+      puts(FREQUENCY_SPECFIY_SOUND_S_FROM_FREQUENCY);
+      puts(LENGTH_SPECFIY_SOUND_S_LENGTH_AS_MILLISECONDS);
       return 0;
    }
 #endif
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
       
       else
       {
-         puts("Invalid syntax.");
+         puts(INVALID_SYNTAX);
          return 1;
       }
    }

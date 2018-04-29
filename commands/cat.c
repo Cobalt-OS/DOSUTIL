@@ -15,12 +15,12 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(!strcmp(argv[1], "--help"))
    {
-      puts("cat - Output specified file's contents.");
-      puts("  cat [options] file");
+      puts(CAT_OUTPUT_SPECIFIED_FILE_S_CONTENTS);
+      puts(CAT_OPTIONS_FILE);
       puts("  cat --help|--version\r\n");
-      puts("Options:");
-      puts("  -E: Ends are shown as \"$\".");
-      puts("  -T: Tabs are shown as \"^I\".");
+      puts(OPTIONS);
+      puts(E_ENDS_ARE_SHOWN_AS);
+      puts(T_TABS_ARE_SHOWN_AS);
       return 0;
    }
 #endif
