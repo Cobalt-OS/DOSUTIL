@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
       puts(BEEP_OPTIONS);
       puts("  beep --help|--version\r\n");
       puts(OPTIONS);
-      puts(FREQUENCY_SPECFIY_SOUND_S_FROM_FREQUENCY);
+      puts(FREQUENCY_SPECIFIY_SOUND_S_FROM_FREQUENCY);
       puts(LENGTH_SPECFIY_SOUND_S_LENGTH_AS_MILLISECONDS);
       return 0;
    }
