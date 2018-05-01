@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
       puts(OPTIONS);
       puts(E_PRINTS_SPECIAL_CHARACTERS_MESSAGE_MUST_BE_QUOTED);
       puts(CHARACTERS_ARE);
-      puts(IN_ADDITION_PRINTS_NEWLINE_CHARACTER);
+      puts(N_IN_ADDITION_PRINTS_NEWLINE_CHARACTER);
       return 0;
    }
 #endif

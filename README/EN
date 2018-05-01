@@ -12,7 +12,7 @@ Usage:
 
 Compile:
 
-  This software must be compiled with Open Watcom.
+  This software should be compiled with Open Watcom.
   
 Commands:
 
@@ -43,18 +43,22 @@ Changelog:
   Open Watcom. Change directory tree. Changelog added on source
   documents.
 
-  0.5 (07-28-2017): Fix typos. Some changes and code fixes. Update
-  README.
+  0.5 (07-28-2017): Fix typos. Update README. Remove unneeded
+  definition on time.c. Reformatting some source code on beep.c, cat.c,
+  clear.c and dosc.h. Move definition that is MAX_PATH_LENGTH that in
+  date.c, ls.c and pwd.c to dosc.h. Delete excess code on date.c. Fix
+  bugs on pwd.c, rm.c, sh.c nd time.c. Remove UPX compressing.
 
-  0.4 (06-24-2017): Fix typos. Some changes and code fixes. Some .exe
-  files have updated to .com files.
+  0.4 (06-24-2017): Fix typos. Some changes and fixes on codes. Some
+  changes of Makefile configures. MAX_COMMAND_LINE_LENGTH definition
+  that in sh.c move into dosc.h. Some .exe files have updated to .com
+  files. Executable files are recompiled.
 
-  0.3 (06-22-2017): Fix typos. Some changes of Makefile. Add .gitignore
-  file.
+  0.3 (06-22-2017): Fix typos. Some changes of Makefile and README. Add
+  .gitignore file. Add help command.
 
-  0.2 (06-16-2017): Fix bugs. Fix typos. Change toolchain to Open
-  Watcom. Executable files have converted 16 bit.
+  0.2 (06-16-2017): Fix typos. Fix founded bugs on all commands. Change
+  toolchain to Open Watcom. Add executable files. Compiled executable
+  files have converted 16 bit.
 
   0.1 (06-12-2017): Create first version.
-
-  0.1 (12.06.2017): Create first version.

@@ -2,9 +2,11 @@
  * DOS Coreutils Configure Header File *
  ***************************************/
 
-// Common Configures
+// Language Configure
 
-#define LANGUAGE EN  // EN ot TR
+#define LANGUAGE EN  // EN or TR
+
+// Common Configures
 
 #define HELP 1
 #define VERSION 1

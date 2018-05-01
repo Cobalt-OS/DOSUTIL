@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
          puts(LS_OPTIONS_FILE);
          puts("  ls --help|--version\r\n");
          puts(OPTIONS);
-         puts(L_DISPLAY_OUTPUT_AS_ONE_COLUMN);
+         puts(_DISPLAY_OUTPUT_AS_ONE_COLUMN);
          puts(A_DON_T_IGNORE_AND);
          puts(L_DISPLAY_LONG_LISTING_FORMAT);
          return 0;

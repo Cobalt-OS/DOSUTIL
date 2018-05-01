@@ -2,9 +2,8 @@ DOS Coreutils 0.6
 
 DOS altnda k‡k Linux komutlar.
 
-Telif hakk (c) 2018 Ercan Ersoy
-Bu program bir ”zgr yazlmdr. Copyright (C) 2018 Ercan Ersoy
-This program is free software. (GNU Genel Kamu Lisans)
+Telif hakk (C) 2018 Ercan Ersoy
+Bu program bir ”zgr yazlmdr. (GNU Genel Kamu Lisans)
 
 Kullanm:
 
@@ -40,22 +39,30 @@ Komutlar:
 De§iŸim Gnl§:
 
   0.6 (29.04.2018): GNU GPL 2. Srm'den 3. Srm'e ge‡ildi. Yazm
-  hatalar dzeltildi. Tšrk‡e'ye ‡evridi. Daha yeni Open Watcom'la
+  hatalar dzeltildi. Trk‡e'ye ‡evridi. Daha yeni Open Watcom'la
   derlendi. Dizin yaps de§iŸtirildi. Kaynak belgelere de§iŸim gnl§
   eklendi.
 
-  0.5 (28.07.2017): Yazm hatalar dzeltildi. Baz de§iŸiklikler
-  yapld. Kaynak kodda dzeltmeler yapld. README gncellendi.
+  0.5 (28.07.2017): Yazm hatalar dzeltildi. README gncellendi.
+  time.c'deki gerekmeyen tanmlama silindi. beep.c'de, cat.c'de,
+  clear.c'de and dosc.h'de yeniden bi‡imlendirme yapld.
+  date.c'deki, ls.c'deki ve pwd.c'deki MAX_PATH_LENGTH tanmlamas
+  dos.c'ye taŸnd. date.c'deki gerekmeyen kod silindi. pwd.c'deki,
+  rm.c'deki, sh.c'deki ve time.c'deki hatalar dzeltildi. UPX
+  skŸtrmas silindi.
 
-  0.4 (24.06.2017): Yazm hatalar dzeltildi. Baz de§iŸiklikler
-  yapld. Kaynak kodda dzeltmeler yapld. Baz .exe dosyalar .com
-  dosyalarna d”nŸtrld.
+  0.4 (24.06.2017): Yazm hatalar dzeltildi. Kaynak kodda baz
+  de§iŸiklikler ve dzeltmeler yapld. MAX_COMMAND_LINE_LENGTH
+  tanmlamas sh.c'den dosc.h'a taŸnd. Baz .exe dosyalar .com
+  dosyalarna d”nŸtrld. €alŸtrlabilir dosyalar yeniden derlendi.
 
   0.3 (22.06.2017): Yazm hatalar dzeltildi. Makefile'de baz
-  de§iŸiklikler yapld. .gitignore dosyas eklendi.
+  de§iŸiklikler yapld. .gitignore dosyas eklendi. help komutu
+  eklendi.
 
-  0.2 (16.06.2017): Kaynak kodda hatalar dzeltildi. Yazm yanlŸlar
-  dzeltildi. Ara‡ zinciri Open Watcom'a de§iŸtirildi. €alŸtrlabilir
-  dosyalar 16 bit'e gncellendi.
+  0.2 (16.06.2017): Yazm yanlŸlar dzeltildi. Komutlarn hepsinde
+  bulunan hatalar dzeltildi. Ara‡ zinciri Open Watcom'a de§iŸtirildi.
+  €alŸtrlabilir dosyalar eklendi. €alŸtrlabilir dosyalar 16 bit'e
+  gncellendi.
   
   0.1 (12.06.2017): ˜lk srm oluŸturuldu.
