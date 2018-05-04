@@ -9,9 +9,9 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(argc == 2 && !strcmp(argv[1], "--help"))
    {
-      puts(MV_MOVE_AND_OR_RENAME_SPECIFIED_FILE_OR_DIRECTORY_TO_SPECIFIED_DIRECTORY_1);
-      puts(MV_MOVE_AND_OR_RENAME_SPECIFIED_FILE_OR_DIRECTORY_TO_SPECIFIED_DIRECTORY_2);
-      puts(MV_SOURCE_DESTINATION);
+      puts(STRING_MV_MOVE_AND_OR_RENAME_SPECIFIED_FILE_OR_DIRECTORY_TO_SPECIFIED_DIRECTORY_1);
+      puts(STRING_MV_MOVE_AND_OR_RENAME_SPECIFIED_FILE_OR_DIRECTORY_TO_SPECIFIED_DIRECTORY_2);
+      puts(STRING_MV_SOURCE_DESTINATION);
       puts("  mv --help|--version");
       return 0;
    }
@@ -34,11 +34,11 @@ int main(int argc, char *argv[])
    }
    else if(argc < 3)
    {
-      fputs(NO_ENOUGH_ARGUMENTS, stderr);
+      fputs(STRING_NO_ENOUGH_ARGUMENTS, stderr);
    }
    else
    {
-      fputs(TOO_MUCH_ARGUMENTS, stderr);
+      fputs(STRING_TOO_MUCH_ARGUMENTS, stderr);
    }
 
    return 0;

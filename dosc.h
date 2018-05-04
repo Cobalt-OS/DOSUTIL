@@ -20,6 +20,6 @@
 #ifdef VERSION
 void version(void)
 {
-   puts(DOS_COREUTILS_VERSION);
+   puts(STRING_DOS_COREUTILS_VERSION);
 }
 #endif

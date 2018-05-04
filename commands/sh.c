@@ -11,11 +11,11 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(!strcmp(argv[1], "--help"))
    {
-      puts(SH_DOS_COREUTILS_SHELL);
+      puts(STRING_SH_DOS_COREUTILS_SHELL);
       puts("  sh");
       puts("  sh --help|--version\r\n");
-      puts(NOTE);
-      puts(IN_DOS_COREUTILS_SHELL_GIVE_COMMAND_EXIT_TO_EXIT_SHELL);
+      puts(STRING_NOTE);
+      puts(STRING_IN_DOS_COREUTILS_SHELL_GIVE_COMMAND_EXIT_TO_EXIT_SHELL);
       return 0;
    }
 #endif

@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
    {
       if(chdir(argv[1]))
       {
-         fprintf(stderr, DOESN_T_DIRECTORY, argv[3]);
+         fprintf(stderr, STRING_DOESN_T_DIRECTORY, argv[3]);
          return 1;
       }
    }

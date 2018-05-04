@@ -11,8 +11,8 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(argc == 2 && !strcmp(argv[1], "--help"))
    {
-      puts(CP_COPY_SPECIFIED_FILE_OR_DIRECTORY_TO_SPECIFIED_DIRECTORY);
-      puts(CP_SOURCE_DESTINATION);
+      puts(STRING_CP_COPY_SPECIFIED_FILE_OR_DIRECTORY_TO_SPECIFIED_DIRECTORY);
+      puts(STRING_CP_SOURCE_DESTINATION);
       puts("  cp --help|--version");
       return 0;
    }
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 
       if(!source || !target)
       { 
-         fprintf(stderr, CAN_T_COPY, argv[1]);
+         fprintf(stderr, STRING_CAN_T_COPY, argv[1]);
       }
 
       while((buffer = fgetc(source)) != 255 && !feof(source))
@@ -48,11 +48,11 @@ int main(int argc, char *argv[])
    }
    else if(argc < 3)
    {
-      fputs(NO_ENOUGH_ARGUMENTS, stderr);
+      fputs(STRING_NO_ENOUGH_ARGUMENTS, stderr);
    }
    else
    {
-      fputs(TOO_MUCH_ARGUMENTS, stderr);
+      fputs(STRING_TOO_MUCH_ARGUMENTS, stderr);
    }
 
    return 0;
