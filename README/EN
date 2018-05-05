@@ -1,6 +1,6 @@
 DOS Coreutils 0.6
 
-Small Linux commands in DOS.
+16 bit implementation of Linux commands for FreeDOS
 
 Copyright (C) 2018 Ercan Ersoy
 This program is free software. (GNU General Public License)
@@ -10,11 +10,10 @@ Usage:
   command [Arguments]
   command --help|--version
 
-Compile:
+  Argument --help is for help.
+  Argument --version is for version information.
 
-  This software should be compiled with Open Watcom.
-  
-Commands:
+Available Commands:
 
   beep
   cat
@@ -32,9 +31,15 @@ Commands:
   rmdir
   sh
   time
-  
-  Argument --help is for help.
-  Argument --version is for version information.
+
+Compile:
+
+  This software should be compiled with Open Watcom.
+
+Contirbute:
+
+  If you want contribute of this project, you make a pull request of
+  DOS Coreutils's repository.
 
 Changelog:
 

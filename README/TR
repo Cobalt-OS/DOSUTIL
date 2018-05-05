@@ -1,6 +1,6 @@
 DOS Coreutils 0.6
 
-DOS altnda k‡k Linux komutlar.
+Linux komutlarnn FreeDOS i‡in 16 bit olarak uyarlanmŸ
 
 Telif hakk (C) 2018 Ercan Ersoy
 Bu program bir ”zgr yazlmdr. (GNU Genel Kamu Lisans)
@@ -10,11 +10,14 @@ Kullanm:
   command [Argmanlar]
   command --help|--version
 
+  --help argman yardm i‡indir.
+  --version argman srm bilgisi i‡indir.
+
 Derleme:
 
   Bu yazlm, Open Watcom ile derlenmelidir.
 
-Komutlar:
+Mevcut Komutlar:
 
   beep
   cat
@@ -33,8 +36,9 @@ Komutlar:
   sh
   time
 
-  --help argman yardm i‡indir.
-  --version argman srm bilgisi i‡indir.
+Compile:
+
+  Bu yazlm, Open Watcom ile derlenmelidir.
 
 De§iŸim Gnl§:
 
