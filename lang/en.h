@@ -59,7 +59,7 @@
    #define STRING_S_SYSTEM_DATE_AND_TIME "-s      Set system date and time."
    #define STRING_TIME_COMMAND_ARGUMENT "  time Command [Argument]"
    #define STRING_TIME_MEASURE_SPECIFIED_COMMAND_S_EXECUTION_TIME_AS_SECOND "time - Measure specified command's execution time as second."
-   #define STRING_TRUE_RETURN_TRUE "true - Exits the program with a successful exit"
+   #define STRING_TRUE_EXITS_THE_PROGRAM_WITHOUT_A_FAILURE "true - Exits the program with a successful exit"
    #define STRING_TOO_MUCH_ARGUMENTS "Too much arguments.\r\n"
    #define STRING_T_TABS_ARE_SHOWN_AS "  -T: Tabs are shown as \"^I\"."
 #endif
