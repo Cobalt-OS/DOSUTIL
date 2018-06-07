@@ -31,6 +31,7 @@
    #define STRING_E_PRINTS_SPECIAL_CHARACTERS_MESSAGE_MUST_BE_QUOTED "-e  Prints special characters. Message must be quoted."
    #define STRING_EXAMPLE "        Example: \"%d-%d-%d %d:%d%:%d\""
    #define STRING_F_FREQUENCY_SPECIFIY_SOUND_S_FROM_FREQUENCY "  -f Frequency: Specify sound's frequency."
+   #define STRING_FALSE_EXITS_THE_PROGRAM_WITH_A_FAILURE "false - Exits the program with a failure"
    #define STRING_FORMAT_SPECIFIY_FORMATTED_OUTPUT_STRING_STRING_FORMAT_IS_C_PRINTF_TYPE "Format  Specify fotmatted output string. String format is C printf type."
    #define STRING_IN_DOS_COREUTILS_SHELL_GIVE_COMMAND_EXIT_TO_EXIT_SHELL "  In DOS Coreutils shell, type command exit \"exit\" to exit shell."
    #define STRING_INVALID_SYNTAX "Invalid syntax."
