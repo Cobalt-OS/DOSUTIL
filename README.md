@@ -6,6 +6,10 @@ Copyright (C) 2018 Ercan Ersoy
 
 This program is licensed under GNU General Public License version 3.
 
+## Thanks
+
+  Thanks LiquidFox1776 for their contributes.
+
 ## Usage
 
     command [Arguments]

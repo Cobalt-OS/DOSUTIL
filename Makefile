@@ -3,7 +3,7 @@ CFLAGS = -oneatx -ohirbk -ol -ol+ -oi -ei -zp4 -0 -s -ri -ms /bt=dos
 LD = wlink
 LDFLAGS = option eliminate option vfremoval
 
-all: commands\beep.com commands\cat.com commands\cd.com commands\clear.exe commands\cp.com commands\date.com commands\echo.com commands\help.com commands\ls.exe commands\mkdir.com commands\mv.com commands\pwd.com commands\rm.com commands\rmdir.com commands\sh.com commands\time.exe
+all: commands\beep.com commands\cat.com commands\cd.com commands\clear.exe commands\cp.com commands\date.com commands\echo.com commands\false.com commands\help.com commands\ls.exe commands\mkdir.com commands\mv.com commands\pwd.com commands\rm.com commands\rmdir.com commands\sh.com commands\time.exe commands\true.com
 
 commands\beep.com: commands\beep.obj
 	$(LD) $(LDFLAGS) system com file $?
@@ -24,6 +24,9 @@ commands\date.com: commands\date.obj
 	$(LD) $(LDFLAGS) system com file $?
 
 commands\echo.com: commands\echo.obj
+	$(LD) $(LDFLAGS) system com file $?
+
+commands\false.com: commands\false.obj
 	$(LD) $(LDFLAGS) system com file $?
 
 commands\help.com: commands\help.obj
@@ -53,6 +56,9 @@ commands\sh.com: commands\sh.obj
 commands\time.exe: commands\time.obj
 	$(LD) $(LDFLAGS) file $?
 
+commands\true.com: commands\true.obj
+	$(LD) $(LDFLAGS) system com file $?
+
 commands\beep.obj: commands\beep.c
 	$(CC) $(CFLAGS) $? -fo=$@
 
@@ -72,6 +78,9 @@ commands\date.obj: commands\date.c
 	$(CC) $(CFLAGS) $? -fo=$@
 
 commands\echo.obj: commands\echo.c
+	$(CC) $(CFLAGS) $? -fo=$@
+
+commands\false.obj: commands\false.c
 	$(CC) $(CFLAGS) $? -fo=$@
 
 commands\help.obj: commands\help.c
@@ -99,6 +108,9 @@ commands\sh.obj: commands\sh.c
 	$(CC) $(CFLAGS) $? -fo=$@
 
 commands\time.obj: commands\time.c
+	$(CC) $(CFLAGS) $? -fo=$@
+
+commands\true.obj: commands\true.c
 	$(CC) $(CFLAGS) $? -fo=$@
 
 clean-obj: .SYMBOLIC

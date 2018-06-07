@@ -31,6 +31,7 @@
    #define STRING_E_PRINTS_SPECIAL_CHARACTERS_MESSAGE_MUST_BE_QUOTED "-e  ôzel karakterleri yazdçrçr. òleti tçrnak iáine alçnmalçdçr."
    #define STRING_EXAMPLE "        ônrek: \"%d-%d-%d %d:%d%:%d\""
    #define STRING_F_FREQUENCY_SPECIFIY_SOUND_S_FROM_FREQUENCY "  -f Frekans: Sesin frekansçnç tançmlar."
+   #define STRING_FALSE_RETURN_A_FAILURE "false - Bir baüarçsçzlçk dîndÅrÅr."
    #define STRING_FORMAT_SPECIFIY_FORMATTED_OUTPUT_STRING_STRING_FORMAT_IS_C_PRINTF_TYPE "Biáim  Tançmlanan biáimde sîzce áçktçlar. Sîzce biáimi, C printf tÅrÅdÅr."
    #define STRING_IN_DOS_COREUTILS_SHELL_GIVE_COMMAND_EXIT_TO_EXIT_SHELL "  DOS Coreutils kabußunda áçkmak iáin \"exit\" komutunu verin."
    #define STRING_INVALID_SYNTAX "Geáersiz sîzdizim."
@@ -56,8 +57,9 @@
    #define STRING_OPTIONS "Seáenekler:"
    #define STRING_SH_DOS_COREUTILS_SHELL "sh - DOS Coreuils kabußu"
    #define STRING_S_SYSTEM_DATE_AND_TIME "-s  Sistem tarihini ve saatini deßiütirir."
+   #define STRING_T_TABS_ARE_SHOWN_AS "  -T: Sekmeler \"^I\" olarak gîrÅnÅr."
    #define STRING_TIME_COMMAND_ARGUMENT "  time Komut [ArgÅman]"
    #define STRING_TIME_MEASURE_SPECIFIED_COMMAND_S_EXECUTION_TIME_AS_SECOND "time - Belirtilen komutun áalçütçrçlma zamançnç saniye olarak îláer."
    #define STRING_TOO_MUCH_ARGUMENTS "Äok fazla argÅman.\r\n"
-   #define STRING_T_TABS_ARE_SHOWN_AS "  -T: Sekmeler \"^I\" olarak gîrÅnÅr."
+   #define STRING_TRUE_RETURN_A_SUCCESS "true - Bir baüarç dîndÅrÅr."
 #endif

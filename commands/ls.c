@@ -116,15 +116,15 @@ int main(int argc, char *argv[])
             {
                printf("  ");
             }
-			printf("%16d " ,status.st_size);
-			puts(element->d_name);
+         printf("%16d " ,status.st_size);
+         puts(element->d_name);
          }
       }
       else
       {
          _gettextwindow(NULL, &column_1, NULL, &column_2);
-		 
-		 column_2 += column_1;
+     
+       column_2 += column_1;
          
          while(element = readdir(directory))
          {
