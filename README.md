@@ -28,6 +28,7 @@ Argument --version is for version information.
   * cp
   * date
   * echo
+  * false
   * help
   * ls
   * mkdir
@@ -37,6 +38,7 @@ Argument --version is for version information.
   * rmdir
   * sh
   * time
+  * true
 
 ## Compile
 
