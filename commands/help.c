@@ -16,6 +16,7 @@ int main(void)
    puts("cp");
    puts("date");
    puts("echo");
+   puts("false");
    puts("ls");
    puts("mkdir");
    puts("mv");
@@ -25,6 +26,7 @@ int main(void)
    puts("rmdir");
    puts("sh");
    puts("time");
+   puts("true");
    
    return 0;
 }
