@@ -36,7 +36,7 @@ Argument --version is for version information.
 
 ## Compile
 
-This software should be compiled with Open Watcom. Run 'build.bat' to compile the files. Run 'build.bat clean' to remove existing obj, com, and exe files then compile.
+This software should be compiled with Open Watcom.
 
 ## Contirbute
 
