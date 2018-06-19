@@ -1,6 +1,6 @@
-/*******************************************
+/******************************************
  * DOS Coreutils true Command Source File *
- *******************************************/
+ ******************************************/
 
 #include "../dosc.h"
 
@@ -23,8 +23,6 @@ int main(int argc, char *argv[])
         return EXIT_SUCCESS;
     }
 #endif
-
-   
 
    return EXIT_SUCCESS;
 }
