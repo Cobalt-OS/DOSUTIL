@@ -6,6 +6,10 @@ Copyright (C) 2018 Ercan Ersoy
 
 This program is licensed under GNU General Public License version 3.
 
+## Thanks
+
+  Thanks LiquidFox1776 for their contributes.
+
 ## Usage
 
     command [Arguments]
@@ -24,6 +28,7 @@ Argument --version is for version information.
   * cp
   * date
   * echo
+  * false
   * help
   * ls
   * mkdir
@@ -33,6 +38,7 @@ Argument --version is for version information.
   * rmdir
   * sh
   * time
+  * true
 
 ## Compile
 
