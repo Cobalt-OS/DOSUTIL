@@ -5,6 +5,10 @@ Linux komutlarçnçn FreeDOS iáin 16 bit olarak uyarlanmçüç
 Telif hakkç (C) 2018 Ercan Ersoy
 Bu program bir îzgÅr yazçlçmdçr. (GNU Genel Kamu Lisansç)
 
+TeüekkÅr:
+
+  LiquidFox1776'a katkçlarç iáin teüekkÅrler.
+
 Kullançm:
 
   command [ArgÅmanlar]
@@ -26,6 +30,7 @@ Mevcut Komutlar:
   cp
   date
   echo
+  false
   help
   ls
   mkdir
@@ -35,6 +40,7 @@ Mevcut Komutlar:
   rmdir
   sh
   time
+  true
 
 Katkçda Bulunma:
 
