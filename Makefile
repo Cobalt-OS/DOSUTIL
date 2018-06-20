@@ -1,6 +1,6 @@
-CC = *wcc
+CC = wcc
 CFLAGS = -oneatx -ohirbk -ol -ol+ -oi -ei -zp4 -0 -s -ri -ms /bt=dos
-LD = *wlink
+LD = wlink
 LDFLAGS = option eliminate option vfremoval
 
 all: lib\basenaml.obj lib\dirnamel.obj lib\getopt.obj commands\beep.com commands\cat.com commands\cd.com commands\clear.exe commands\cp.com commands\date.com commands\dirname.com commands\echo.com commands\false.com commands\help.com commands\ls.exe commands\mkdir.com commands\mv.com commands\pwd.com commands\rm.com commands\rmdir.com commands\sh.com commands\time.exe commands\true.com
