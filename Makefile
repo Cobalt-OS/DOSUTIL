@@ -32,8 +32,8 @@ commands\cp.com: commands\cp.obj
 commands\date.com: commands\date.obj
 	$(LD) $(LDFLAGS) system com file $?
 
-commands\dirname.com: commands\dirname.obj lib\getopt.obj lib\dirnamel.obj lib\basenaml.obj
-	$(LD) $(LDFLAGS) system com file {$?}
+commands\dirname.com: 
+	$(LD) $(LDFLAGS) system com file commands\dirname.obj, lib\getopt.obj, lib\dirnamel.obj, lib\basenaml.obj
 
 commands\echo.com: commands\echo.obj
 	$(LD) $(LDFLAGS) system com file $?
