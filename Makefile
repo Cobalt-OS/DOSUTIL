@@ -3,7 +3,16 @@ CFLAGS = -oneatx -ohirbk -ol -ol+ -oi -ei -zp4 -0 -s -ri -ms /bt=dos
 LD = wlink
 LDFLAGS = option eliminate option vfremoval
 
-all: commands\beep.com commands\cat.com commands\cd.com commands\clear.exe commands\cp.com commands\date.com commands\echo.com commands\false.com commands\help.com commands\ls.exe commands\mkdir.com commands\mv.com commands\pwd.com commands\rm.com commands\rmdir.com commands\sh.com commands\time.exe commands\true.com
+all: lib\basenaml.obj lib\dirnamel.obj lib\getopt.obj commands\beep.com commands\cat.com commands\cd.com commands\clear.exe commands\cp.com commands\date.com commands\dirname.com commands\echo.com commands\false.com commands\help.com commands\ls.exe commands\mkdir.com commands\mv.com commands\pwd.com commands\rm.com commands\rmdir.com commands\sh.com commands\time.exe commands\true.com
+
+lib\basenaml.obj: lib\basenaml.c
+	$(CC) $(CFLAGS) $? -fo=$@
+
+lib\dirnamel.obj: lib\dirnamel.c
+	$(CC) $(CFLAGS) $? -fo=$@
+
+lib\getopt.obj: lib\getopt.c
+	$(CC) $(CFLAGS) $? -fo=$@
 
 commands\beep.com: commands\beep.obj
 	$(LD) $(LDFLAGS) system com file $?
@@ -22,6 +31,9 @@ commands\cp.com: commands\cp.obj
 
 commands\date.com: commands\date.obj
 	$(LD) $(LDFLAGS) system com file $?
+
+commands\dirname.com: commands\dirname.obj lib\getopt.obj lib\dirnamel.obj lib\basenaml.obj
+	$(LD) $(LDFLAGS) system com file {$?}
 
 commands\echo.com: commands\echo.obj
 	$(LD) $(LDFLAGS) system com file $?
@@ -49,7 +61,7 @@ commands\rm.com: commands\rm.obj
 
 commands\rmdir.com: commands\rmdir.obj
 	$(LD) $(LDFLAGS) system com file $?
-	
+        
 commands\sh.com: commands\sh.obj
 	$(LD) $(LDFLAGS) system com file $?
 
@@ -75,6 +87,9 @@ commands\cp.obj: commands\cp.c
 	$(CC) $(CFLAGS) $? -fo=$@
 
 commands\date.obj: commands\date.c
+	$(CC) $(CFLAGS) $? -fo=$@
+
+commands\dirname.obj: commands\dirname.c
 	$(CC) $(CFLAGS) $? -fo=$@
 
 commands\echo.obj: commands\echo.c
@@ -112,6 +127,6 @@ commands\time.obj: commands\time.c
 
 commands\true.obj: commands\true.c
 	$(CC) $(CFLAGS) $? -fo=$@
-
+        
 clean-obj: .SYMBOLIC
 	@if exist commands\*.obj del commands\*.obj
