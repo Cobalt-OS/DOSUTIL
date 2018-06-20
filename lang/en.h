@@ -22,7 +22,7 @@
    #define STRING_DATE_PRINT_OR_SET_SYSTEM_DATE_AND_TIME "date - Print or set system date and time."
    #define STRING_DATE_S_FORMAT "  date -s [Format]"
    #define STRING_DEFAULT_FORMAT_IS_ISO_TYPE "        Default format is ISO type."
-   #define STRING_DIRNAME_ARGUMENTS "  -z, --zero     end each output line with NUL, not newline\r\n"
+   #define STRING_DIRNAME_ARGUMENTS "  -z, --zero: End each output line with NUL, not newline\r\n"
    #define STRING_DIRNAME_DESCRIPTION "Output each NAME with its last non-slash component and trailing slashes\nremoved; if NAME contains no \\'s, output '.' (meaning the current directory).\r\n\r\n"
    #define STRING_DIRNAME_EXAMPLES "\r\nExamples:\r\n  %s C:\\dir1\\dir2          -> \"C:\\dir1\"\r\n  %s dir1\\str dir2\\str     -> \"dir1\" followed by \"dir2\"\r\n  %s autoexec.bat          -> \".\"\r\n"
    #define STRING_DIRNAME_USAGE "Usage: %s [OPTION] NAME...\r\n"
