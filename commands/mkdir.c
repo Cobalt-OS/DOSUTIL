@@ -11,10 +11,14 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(!strcmp(argv[1], "--help"))
    {
-      puts(STRING_MKDIR_CREATES_SPECIFIED_DIRECTORIES);
-      puts(STRING_MKDIR_DIRECTORIES);
+      puts(STRING_MKDIR_DESCRIPTION);
+      puts(STRING_MKDIR_USAGE);
       puts("  mkdir --help|--version");
-      return 0;
+      puts(STRING_OPTIONS);
+      puts(STRING_HELP_OPTION_DESCRIPTION);
+      puts(STRING_VERSION_OPTION_DESCRIPTION);
+
+      return EXIT_SUCCESS;
    }
 #endif
 
@@ -22,7 +26,8 @@ int main(int argc, char *argv[])
    if(!strcmp(argv[1], "--version"))
    {
       version();
-      return 0;
+
+      return EXIT_SUCCESS;
    }
 #endif
 
@@ -30,9 +35,11 @@ int main(int argc, char *argv[])
    {
       if(mkdir(argv[i]))
       {
-         fprintf(stderr, STRING_CAN_T_CREATE, argv[i]);
+         fprintf(stderr, STRING_MKDIR_CAN_NOT_CREATE_DIRECTORY, argv[i]);
+
+         return EXIT_FAILURE;
       }
    }
 
-   return 0;
+   return EXIT_SUCCESS;
 }

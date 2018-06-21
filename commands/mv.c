@@ -9,11 +9,15 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(argc == 2 && !strcmp(argv[1], "--help"))
    {
-      puts(STRING_MV_MOVE_AND_OR_RENAME_SPECIFIED_FILE_OR_DIRECTORY_TO_SPECIFIED_DIRECTORY_1);
-      puts(STRING_MV_MOVE_AND_OR_RENAME_SPECIFIED_FILE_OR_DIRECTORY_TO_SPECIFIED_DIRECTORY_2);
-      puts(STRING_MV_SOURCE_DESTINATION);
+      puts(STRING_MV_DESCRIPTION_1);
+      puts(STRING_MV_DESCRIPTION_2);
+      puts(STRING_MV_USAGE);
       puts("  mv --help|--version");
-      return 0;
+      puts(STRING_OPTIONS);
+      puts(STRING_HELP_OPTION_DESCRIPTION);
+      puts(STRING_VERSION_OPTION_DESCRIPTION);
+
+      return EXIT_SUCCESS;
    }
 #endif
 
@@ -21,7 +25,8 @@ int main(int argc, char *argv[])
    if(argc == 2 && !strcmp(argv[1], "--version"))
    {
       version();
-      return 0;
+
+      return EXIT_SUCCESS;
    }
 #endif
 
@@ -29,7 +34,7 @@ int main(int argc, char *argv[])
    {
       if(rename(argv[1], argv[2]))
       { 
-         fprintf(stderr, "%s can\'t move.\r\n", argv[1]);
+         fprintf(stderr, STRING_MV_CAN_NOT_MOVE, argv[1]);
       }
    }
    else if(argc < 3)
@@ -41,5 +46,5 @@ int main(int argc, char *argv[])
       fputs(STRING_TOO_MUCH_ARGUMENTS, stderr);
    }
 
-   return 0;
+   return EXIT_SUCCESS;
 }

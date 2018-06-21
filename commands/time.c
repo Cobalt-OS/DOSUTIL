@@ -15,10 +15,14 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(argc == 2 && !strcmp(argv[1], "--help"))
    {
-      puts(STRING_TIME_MEASURE_SPECIFIED_COMMAND_S_EXECUTION_TIME_AS_SECOND);
-      puts(STRING_TIME_COMMAND_ARGUMENT);
+      puts(STRING_TIME_DESCRIPTION);
+      puts(STRING_TIME_ARGUMENTS);
       puts("  time --help|--version");
-      return 0;
+      puts(STRING_OPTIONS);
+      puts(STRING_HELP_OPTION_DESCRIPTION);
+      puts(STRING_VERSION_OPTION_DESCRIPTION);
+
+      return EXIT_SUCCESS;
    }
 #endif
 
@@ -26,7 +30,8 @@ int main(int argc, char *argv[])
    if(argc == 2 && !strcmp(argv[1], "--version"))
    {
       version();
-      return 0;
+
+      return EXIT_SUCCESS;
    }
 #endif
 
@@ -54,8 +59,8 @@ int main(int argc, char *argv[])
    }
    else
    {
-      puts(STRING_NO_ENOUGH_ARGUMENTS);
+      fprintf(stderr, STRING_NO_ENOUGH_ARGUMENTS);
    }
    
-   return 0;
+   return EXIT_SUCCESS;
 }

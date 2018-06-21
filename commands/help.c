@@ -8,13 +8,14 @@
 
 int main(void)
 {
-   puts(STRING_DOS_COREUTILS_COMMANDS);
+   puts(STRING_HELP_DOS_COREUTILS_COMMANDS);
    puts("beep");
    puts("cat");
    puts("cd");
    puts("clear");
    puts("cp");
    puts("date");
+   puts("dirname");
    puts("echo");
    puts("false");
    puts("ls");
@@ -28,7 +29,7 @@ int main(void)
    puts("time");
    puts("true");
    
-   return 0;
+   return EXIT_SUCCESS;
 }
 
 #endif

@@ -15,13 +15,15 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(!strcmp(argv[1], "--help"))
    {
-      puts(STRING_CAT_OUTPUT_SPECIFIED_FILE_S_CONTENTS);
-      puts(STRING_CAT_OPTIONS_FILE);
+      puts(STRING_CAT_DESCRIPTION);
+      puts(STRING_CAT_USAGE);
       puts("  cat --help|--version\r\n");
       puts(STRING_OPTIONS);
-      puts(STRING_E_ENDS_ARE_SHOWN_AS);
-      puts(STRING_T_TABS_ARE_SHOWN_AS);
-      return 0;
+      puts(STRING_CAT_ENDS);
+      puts(STRING_CAT_TABS);
+      puts(STRING_HELP_OPTION_DESCRIPTION);
+      puts(STRING_VERSION_OPTION_DESCRIPTION);
+      return EXIT_SUCCESS;
    }
 #endif
 
@@ -29,7 +31,7 @@ int main(int argc, char *argv[])
    if(!strcmp(argv[1], "--version"))
    {
       version();
-      return 0;
+      return EXIT_SUCCESS;
    }
 #endif
 
@@ -68,5 +70,5 @@ int main(int argc, char *argv[])
 
    fclose(file_resource);
 
-   return 0;
+   return EXIT_SUCCESS;
 }

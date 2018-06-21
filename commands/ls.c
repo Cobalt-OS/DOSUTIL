@@ -31,14 +31,16 @@ int main(int argc, char *argv[])
 #ifdef HELP
       if(!strcmp(argv[1], "--help"))
       {
-         puts(STRING_LS_LIST_DIRECTORY_CONTENTS);
-         puts(STRING_LS_OPTIONS_FILE);
+         puts(STRING_LS_DESCRIPTION);
+         puts(STRING_LS_USAGE);
          puts("  ls --help|--version\r\n");
          puts(STRING_OPTIONS);
-         puts(STRING__DISPLAY_OUTPUT_AS_ONE_COLUMN);
-         puts(STRING_A_DON_T_IGNORE_AND);
-         puts(STRING_L_DISPLAY_LONG_LISTING_FORMAT);
-         return 0;
+         puts(STRING_LS_DISPLAY_OUTPUT_AS_ONE_COLUMN);
+         puts(STRING_LS_DO_NOT_IGNORE);
+         puts(STRING_LS_DISPLAY_LONG_LISTING_FORMAT);
+         puts(STRING_HELP_OPTION_DESCRIPTION);
+         puts(STRING_VERSION_OPTION_DESCRIPTION);
+         return EXIT_SUCCESS;
       }
 #endif
 
@@ -46,7 +48,7 @@ int main(int argc, char *argv[])
       if(!strcmp(argv[1], "--version"))
       {
          version();
-         return 0;
+         return EXIT_SUCCESS;
       }
 #endif
 
@@ -176,5 +178,5 @@ int main(int argc, char *argv[])
 
    free(path);
 
-   return 0;
+   return EXIT_SUCCESS;
 }

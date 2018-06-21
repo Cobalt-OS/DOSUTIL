@@ -11,9 +11,12 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(!strcmp(argv[1], "--help"))
    {
-      puts(STRING_PWD_OUTPUT_CURRENT_DIRECTORY_S_NAME);
+      puts(STRING_PWD_DESCRIPTION);
       puts("  pwd");
       puts("  pwd --help|--version");
+      puts(STRING_OPTIONS);
+      puts(STRING_HELP_OPTION_DESCRIPTION);
+      puts(STRING_VERSION_OPTION_DESCRIPTION);
    }
 #endif
 
@@ -27,9 +30,11 @@ int main(int argc, char *argv[])
    else
    {
       buffer = (char *)malloc(MAX_PATH_LENGTH);
+
       puts(getcwd(buffer, MAX_PATH_LENGTH));
+
       free(buffer);
    }
 
-   return 0;
+   return EXIT_SUCCESS;
 }

@@ -12,16 +12,19 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(!strcmp(argv[1], "--help"))
    {
-      puts(STRING_DATE_PRINT_OR_SET_SYSTEM_DATE_AND_TIME);
-      puts(STRING_DATE_FORMAT);
-      puts(STRING_DATE_S_FORMAT);
+      puts(STRING_DATE_DESCRIPTION);
+      puts(STRING_DATE_USAGE_1);
+      puts(STRING_DATE_USAGE_2);
       puts("  date --help|--version\r\n");
       puts(STRING_OPTIONS);
-      puts(STRING_S_SYSTEM_DATE_AND_TIME);
-      puts(STRING_FORMAT_SPECIFIY_FORMATTED_OUTPUT_STRING_STRING_FORMAT_IS_C_PRINTF_TYPE);
-      puts(STRING_EXAMPLE);
-      puts(STRING_DEFAULT_FORMAT_IS_ISO_TYPE);
-      return 0;
+      puts(STRING_DATE_SET_TIME_AND_DATE);
+      puts(STRING_DATE_FORMAT);
+      puts(STRING_DATE_EXAMPLE_FORMAT);
+      puts(STRING_DATE_DEFAULT_FORMAT);
+      puts(STRING_HELP_OPTION_DESCRIPTION);
+      puts(STRING_VERSION_OPTION_DESCRIPTION);
+
+      return EXIT_SUCCESS;
    }
 #endif
 
@@ -29,7 +32,8 @@ int main(int argc, char *argv[])
    if(!strcmp(argv[1], "--version"))
    {
       version();
-      return 0;
+
+      return EXIT_SUCCESS;
    }
 #endif
 
@@ -38,7 +42,8 @@ int main(int argc, char *argv[])
       _dos_getdate(&date);
       _dos_gettime(&time);
       printf("%4hu-%2hhu-%2hhu %2hhu:%2hhu:%2hhu", date.year, date.month, date.day, time.hour, time.minute, time.second);
-      return 0;
+
+      return EXIT_SUCCESS;
    }
    else
    {
@@ -49,16 +54,17 @@ int main(int argc, char *argv[])
          _dos_setdate(&date);
          _dos_settime(&time);
          
-         return 0;
+         return EXIT_SUCCESS;
       }
       else
       {
          _dos_getdate(&date);
          _dos_gettime(&time);
          printf(argv[1], date.year, date.month, date.day, time.hour, time.minute, time.second);
-         return 0;
+
+         return EXIT_SUCCESS;
       }
    }
    
-   return 0;
+   return EXIT_SUCCESS;
 }

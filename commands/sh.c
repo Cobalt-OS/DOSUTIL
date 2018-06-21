@@ -11,12 +11,16 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(!strcmp(argv[1], "--help"))
    {
-      puts(STRING_SH_DOS_COREUTILS_SHELL);
+      puts(STRING_SH_DESCRIPTION);
       puts("  sh");
       puts("  sh --help|--version\r\n");
+      puts(STRING_OPTIONS);
+      puts(STRING_HELP_OPTION_DESCRIPTION);
+      puts(STRING_VERSION_OPTION_DESCRIPTION);
       puts(STRING_NOTE);
-      puts(STRING_IN_DOS_COREUTILS_SHELL_GIVE_COMMAND_EXIT_TO_EXIT_SHELL);
-      return 0;
+      puts(STRING_SH_TYPE_EXIT);
+
+      return EXIT_SUCCESS;
    }
 #endif
 
@@ -24,7 +28,8 @@ int main(int argc, char *argv[])
    else if(!strcmp(argv[1], "--version"))
    {
       version();
-      return 0;
+
+      return EXIT_SUCCESS;
    }
 #endif
 
@@ -37,7 +42,7 @@ int main(int argc, char *argv[])
 
    if(!strcmp(command_line, "exit\n"))
    {
-      exit(0);
+      exit(EXIT_SUCCESS);
    }
    else if(strcmp(command_line, "\n"))
    {
@@ -46,5 +51,5 @@ int main(int argc, char *argv[])
 
    goto loop;
 
-   return 0;
+   return EXIT_SUCCESS;
 }

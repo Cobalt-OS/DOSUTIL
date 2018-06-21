@@ -13,13 +13,15 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(!strcmp(argv[i], "--help"))
    {
-      puts(STRING_BEEP_OUTPUT_FROM_PC_SPEAKER);
-      puts(STRING_BEEP_OPTIONS);
+      puts(STRING_BEEP_DESCRIPTION);
+      puts(STRING_BEEP_USAGE);
       puts("  beep --help|--version\r\n");
       puts(STRING_OPTIONS);
-      puts(STRING_F_FREQUENCY_SPECIFIY_SOUND_S_FROM_FREQUENCY);
-      puts(STRING_LENGTH_SPECFIY_SOUND_S_LENGTH_AS_MILLISECONDS);
-      return 0;
+      puts(STRING_BEEP_FREQUENCY);
+      puts(STRING_BEEP_LENGTH);
+      puts(STRING_HELP_OPTION_DESCRIPTION);
+      puts(STRING_VERSION_OPTION_DESCRIPTION);
+      return EXIT_SUCCESS;
    }
 #endif
 
@@ -27,7 +29,7 @@ int main(int argc, char *argv[])
    if(!strcmp(argv[i], "--version"))
    {
       version();
-      return 0;
+      return EXIT_SUCCESS;
    }
 #endif
 
@@ -52,7 +54,7 @@ int main(int argc, char *argv[])
       else
       {
          puts(STRING_INVALID_SYNTAX);
-         return 1;
+         return EXIT_FAILURE;
       }
    }
 
@@ -60,5 +62,5 @@ int main(int argc, char *argv[])
    delay(length);
    nosound();
    
-   return 0;
+   return EXIT_SUCCESS;
 }

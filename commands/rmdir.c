@@ -11,10 +11,14 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(!strcmp(argv[1], "--help"))
    {
-      puts(STRING_RMDIR_REMOVE_SPECIFIED_DIRECTORIES);
-      puts(STRING_RMDIR_DIRECTORIES);
+      puts(STRING_RMDIR_DESCRIPTION);
+      puts(STRING_RMDIR_USAGE);
       puts("  rmdir --help|--version");
-      return 0;
+      puts(STRING_OPTIONS);
+      puts(STRING_HELP_OPTION_DESCRIPTION);
+      puts(STRING_VERSION_OPTION_DESCRIPTION);
+
+      return EXIT_SUCCESS;
    }
 #endif
 
@@ -22,7 +26,8 @@ int main(int argc, char *argv[])
    if(!strcmp(argv[1], "--version"))
    {
       version();
-      return 0;
+
+      return EXIT_SUCCESS;
    }
 #endif
 
@@ -30,9 +35,9 @@ int main(int argc, char *argv[])
    {
       if(rmdir(argv[i]))
       {
-         fprintf(stderr, STRING_CAN_T_REMOVE, argv[i]);
+         fprintf(stderr, STRING_RMDIR_CAN_NOT_REMOVE, argv[i]);
       }
    }
 
-   return 0;
+   return EXIT_SUCCESS;
 }

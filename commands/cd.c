@@ -10,10 +10,11 @@ int main(int argc, char *argv[])
    {
       if(chdir(argv[1]))
       {
-         fprintf(stderr, STRING_DOESN_T_DIRECTORY, argv[3]);
-         return 1;
+         fprintf(stderr, STRING_DOES_NOT_DIRECTORY, argv[3]);
+
+         return EXIT_FAILURE;
       }
    }
    
-   return 0;
+   return EXIT_SUCCESS;
 }

@@ -16,14 +16,17 @@ int main(int argc, char *argv[])
 #ifdef HELP
    if(!strcmp(argv[1], "--help"))
    {
-      puts(STRING_ECHO_PRINT_SPECIFIED_MESSAGES);
-      puts(STRING_ECHO_OPTIONS_MESSAGES);
+      puts(STRING_ECHO_DESCRIPTION);
+      puts(STRING_ECHO_USAGE);
       puts("  echo --help|--version\r\n");
       puts(STRING_OPTIONS);
-      puts(STRING_E_PRINTS_SPECIAL_CHARACTERS_MESSAGE_MUST_BE_QUOTED);
-      puts(STRING_CHARACTERS_ARE);
-      puts(STRING_N_IN_ADDITION_PRINTS_NEWLINE_CHARACTER);
-      return 0;
+      puts(STRING_ECHO_SPECIAL_CHARACTERS);
+      puts(STRING_ECHO_CHARACTERS_ARE);
+      puts(STRING_ECHO_NEWLINE_CHARACTER);
+      puts(STRING_HELP_OPTION_DESCRIPTION);
+      puts(STRING_VERSION_OPTION_DESCRIPTION);
+
+      return EXIT_SUCCESS;
    }
 #endif
 
@@ -31,7 +34,7 @@ int main(int argc, char *argv[])
    if(!strcmp(argv[1], "--version"))
    {
       version();
-      return 0;
+      return EXIT_SUCCESS;
    }
 #endif
 
@@ -87,7 +90,7 @@ int main(int argc, char *argv[])
             }
             else if(argv[i][j] == 'c')
             {
-               return 0;
+               return EXIT_SUCCESS;
             }
             else if(argv[i][j] == 'e')
             {
@@ -148,5 +151,5 @@ int main(int argc, char *argv[])
       putchar('\n');
    }
 
-   return 0;
+   return EXIT_SUCCESS;
 }
