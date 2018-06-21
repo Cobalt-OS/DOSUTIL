@@ -3,7 +3,7 @@ CFLAGS = -oneatx -ohirbk -ol -ol+ -oi -ei -zp4 -0 -s -ri -ms /bt=dos
 LD = wlink
 LDFLAGS = option eliminate option vfremoval
 
-all: commands\beep.com commands\cat.com commands\cd.com commands\clear.exe commands\cp.com commands\date.com commands\echo.com commands\false.com commands\help.com commands\ls.exe commands\mkdir.com commands\mv.com commands\pwd.com commands\rm.com commands\rmdir.com commands\sh.com commands\time.exe commands\true.com
+all: lib\basenaml.obj lib\dirnamel.obj lib\getopt.obj commands\beep.com commands\cat.com commands\cd.com commands\clear.exe commands\cp.com commands\date.com commands\echo.com commands\false.com commands\help.com commands\ls.exe commands\mkdir.com commands\mv.com commands\pwd.com commands\rm.com commands\rmdir.com commands\sh.com commands\time.exe commands\true.com
 
 commands\beep.com: commands\beep.obj
 	$(LD) $(LDFLAGS) system com file $?
@@ -23,8 +23,8 @@ commands\cp.com: commands\cp.obj
 commands\date.com: commands\date.obj
 	$(LD) $(LDFLAGS) system com file $?
 
-#commands\dirname.com: commands\dirname.obj
-	#$(LD) $(LDFLAGS) system com file $? file lib\getopt.obj, lib\dirnamel.obj, lib\basenaml.obj
+commands\dirname.com: 
+	$(LD) $(LDFLAGS) system com file commands\dirname.obj, lib\getopt.obj, lib\dirnamel.obj, lib\basenaml.obj
 
 commands\echo.com: commands\echo.obj
 	$(LD) $(LDFLAGS) system com file $?
