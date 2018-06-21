@@ -27,6 +27,7 @@ Argument --version is for version information.
   * clear
   * cp
   * date
+  * dirname
   * echo
   * false
   * help

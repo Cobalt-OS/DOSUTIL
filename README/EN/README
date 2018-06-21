@@ -25,6 +25,7 @@ Available Commands:
   clear
   cp
   date
+  dirname
   echo
   false
   help
