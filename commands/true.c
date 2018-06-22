@@ -1,6 +1,5 @@
-/******************************************
- * DOS Coreutils true Command Source File *
- ******************************************/
+/* true.c - DOS Coreutils true command source file
+   Written by LiquidFox1776. */
 
 #include "../dosc.h"
 

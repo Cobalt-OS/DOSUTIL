@@ -1,6 +1,8 @@
 /****************************************
  * DOS Coreutils cd Command Source File *
  ****************************************/
+/* cd.c - DOS Coreutils cd command source file
+   Written by Ercan Ersoy. */
 
 #include "../dosc.h"
 

@@ -1,6 +1,5 @@
-/*********************************
- * DOS Coreutils mv Command File *
- *********************************/
+/* mv.c - DOS Coreutils mv command source file
+   Written by Ercan Ersoy. */
 
 #include "../dosc.h"
 

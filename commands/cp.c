@@ -1,6 +1,5 @@
-/****************************************
- * DOS Coreutils cp Command Source File *
- ****************************************/
+/* cp.c - DOS Coreutils cp command source file
+   Written by Ercan Ersoy. */
 
 #include "../dosc.h"
 

@@ -1,6 +1,5 @@
-/******************************************
- * DOS Coreutils echo Command Source File *
- ******************************************/
+/* echo.c - DOS Coreutils echo command source file
+   Written by Ercan Ersoy. */
 
 #include "../dosc.h"
 

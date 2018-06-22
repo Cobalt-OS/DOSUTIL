@@ -1,6 +1,5 @@
-/*******************************************
- * DOS Coreutils clear Command Source File *
- *******************************************/
+/* clear.c - DOS Coreutils clear command source file
+   Written by Ercan Ersoy. */
 
 #include "../dosc.h"
 

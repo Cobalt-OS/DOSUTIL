@@ -1,6 +1,5 @@
-/******************************************
- * DOS Coreutils help Command Source File *
- ******************************************/
+/* help.c - DOS Coreutils help command source file
+   Written by Ercan Ersoy. */
 
 #include "../dosc.h"
 

@@ -1,6 +1,5 @@
-/***********************************
- * DOS Coreutils pwd Command  File *
- ***********************************/
+/* pwd.c - DOS Coreutils pwd command source file
+   Written by Ercan Ersoy. */
 
 #include "../dosc.h"
 

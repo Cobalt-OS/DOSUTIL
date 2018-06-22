@@ -1,3 +1,6 @@
+# Makefile - DOS Coreutils Makefile
+# Written by Ercan Ersoy.
+
 CC = *wcc
 CFLAGS = -oneatx -ohirbk -ol -ol+ -oi -ei -zp4 -0 -s -ri -ms /bt=dos
 LD = *wlink

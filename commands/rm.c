@@ -1,6 +1,5 @@
-/****************************************
- * DOS Coreutils rm Command Source File *
- ****************************************/
+/* rm.c - DOS Coreutils rm command source file
+   Written by Ercan Ersoy. */
 
 #include "../dosc.h"
 

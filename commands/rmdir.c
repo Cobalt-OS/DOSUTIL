@@ -1,6 +1,5 @@
-/*******************************************
- * DOS Coreutils rmdir Command Source File *
- *******************************************/
+/* rmdir.c - DOS Coreutils rmdir command source file
+   Written by Ercan Ersoy. */
 
 #include "../dosc.h"
 

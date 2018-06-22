@@ -1,6 +1,5 @@
-/*******************************************
- * DOS Coreutils mkdir Command Source File *
- *******************************************/
+/* mkdir.c - DOS Coreutils mkdir command source file
+   Written by Ercan Ersoy. */
 
 #include "../dosc.h"
 

@@ -6,9 +6,10 @@ Copyright (C) 2018 Ercan Ersoy
 
 This program is licensed under GNU General Public License version 3.
 
-## Thanks
+## Note
 
   Thanks LiquidFox1776 for their contributes.
+  DOS Coreutils includes some parts of GNU Coreutils.
 
 ## Usage
 

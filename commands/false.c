@@ -1,6 +1,5 @@
-/*******************************************
- * DOS Coreutils false Command Source File *
- *******************************************/
+/* false.c - DOS Coreutils false command source file
+   Written by LiquidFox1776. */
 
 #include "../dosc.h"
 

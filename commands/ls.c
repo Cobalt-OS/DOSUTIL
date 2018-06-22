@@ -1,6 +1,5 @@
-/****************************************
- * DOS Coreutils ls Command Source File *
- ****************************************/
+/* ls.c - DOS Coreutils ls command source file
+   Written by Ercan Ersoy. */
 
 #include "../dosc.h"
 

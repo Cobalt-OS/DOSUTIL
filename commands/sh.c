@@ -1,6 +1,5 @@
-/****************************************
- * DOS Coreutils sh Command Source File *
- ****************************************/
+/* sh.c - DOS Coreutils sh command source file
+   Written by Ercan Ersoy. */
 
 #include "../dosc.h"
 

@@ -1,6 +1,5 @@
-/***************************************
- * DOS Coreutils Configure Header File *
- ***************************************/
+/* config.h - DOS Coreutils configuration header file
+   Written by Ercan Ersoy. */
 
 // Language Configure
 

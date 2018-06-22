@@ -1,6 +1,5 @@
-/**********************************
- * DOS Coreutils cat Command File *
- **********************************/
+/* cat.c - DOS Coreutils cat command source file
+   Written by Ercan Ersoy. */
 
 #include "../dosc.h"
 

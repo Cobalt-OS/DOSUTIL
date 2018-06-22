@@ -1,6 +1,6 @@
-/**********************************************
- * DOS Coreutils English Language Header File *
- **********************************************/
+/* en.h - DOS Coreutils English Language header file
+   Written by Ercan Ersoy and LiquidFox1776. */
+
 
 #define EN 1
 

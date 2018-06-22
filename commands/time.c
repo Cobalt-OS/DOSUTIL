@@ -1,6 +1,5 @@
-/******************************************
- * DOS Coreutils time Command Source File *
- ******************************************/
+/* time.c - DOS Coreutils time command source file
+   Written by Ercan Ersoy. */
 
 #include "../dosc.h"
 

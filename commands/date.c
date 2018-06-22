@@ -1,6 +1,5 @@
-/******************************************
- * DOS Coreutils date Command Source File *
- ******************************************/
+/* date.c - DOS Coreutils date command source file
+   Written by Ercan Ersoy. */
 
 #include "../dosc.h"
 

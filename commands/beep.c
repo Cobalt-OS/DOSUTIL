@@ -1,6 +1,6 @@
-/******************************************
- * DOS Coreutils beep Command Source File *
- ******************************************/
+/* beep.c - DOS Coreutils beep command source file
+   Written by Ercan Ersoy. */
+
 
 #include "../dosc.h"
 

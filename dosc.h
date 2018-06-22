@@ -1,6 +1,6 @@
-/**********************************
- * DOS Coreutils Main Header File *
- **********************************/
+/* dosc.h - DOS Coreutils main header file
+   Some of the code is given below from GNU Coreutils.
+   Written the other by Ercan Ersoy and LiquidFox1776. */
 
 #include <conio.h>
 #include <direct.h>

@@ -1,6 +1,5 @@
-/**********************************************
- * DOS Coreutils Turkish Language Header File *
- **********************************************/
+/* tr.h - DOS Coreutils Turkish Language header file
+   Written by Ercan Ersoy. */
 
 #define TR 2
 
