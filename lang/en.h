@@ -20,7 +20,7 @@
    #define STRING_DATE_DEFAULT_FORMAT "        Default format is ISO type."
    #define STRING_DATE_DESCRIPTION "date - Print or set system date and time."
    #define STRING_DATE_EXAMPLE_FORMAT "  Example: \"%d-%d-%d %d:%d%:%d\""
-   #define STRING_DATE_FORMAT "Format  Specify fotmatted output string. String format is C printf type."
+   #define STRING_DATE_FORMAT "Format  Specify formatted output string. String format is C printf type."
    #define STRING_DATE_SET_TIME_AND_DATE "  -s: Set system date and time."
    #define STRING_DATE_USAGE_1 "  date [Format]"
    #define STRING_DATE_USAGE_2 "  date -s [Format]"
