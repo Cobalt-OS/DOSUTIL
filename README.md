@@ -9,6 +9,7 @@ This program is licensed under GNU General Public License version 3.
 ## Note
 
   Thanks LiquidFox1776 for his contributions.
+  Thanks Atnode for his contributions.
   DOS Coreutils includes some parts of GNU Coreutils.
 
 ## Usage
