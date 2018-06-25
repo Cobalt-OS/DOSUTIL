@@ -3,7 +3,7 @@
 
 // Language Configure
 
-#define LANGUAGE EN  // EN or TR
+#define LANGUAGE EN  // EN, TR or FR
 
 // Common Configures
 
