@@ -33,7 +33,7 @@
    #define STRING_ECHO_NEWLINE_CHARACTER "-n  In addition, prints newline character."
    #define STRING_ECHO_SPECIAL_CHARACTERS "-e  Prints special characters. Message must be quoted."
    #define STRING_ECHO_USAGE "  echo [Options] Messages"
-   #define STRING_EMIT_TRY_HELP "Try line '%s --help' fore more information.\n"
+   #define STRING_EMIT_TRY_HELP "Try line '%s --help' for more information.\n"
    #define STRING_FALSE_DESCRIPTION "false - Return a failure."
    #define STRING_DOES_NOT_DIRECTORY "%s doesn't directory.\r\n"
    #define STRING_DOS_COREUTILS_VERSION "DOS Coreutils Version: 0.6"
