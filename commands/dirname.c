@@ -13,6 +13,7 @@
 
 /* Written by David MacKenzie and Jim Meyering. */
 /* Ported to FreeDOS by LiquidFox1776 */
+/* Some changes applied by Ercan Ersoy. */
 
 #include "..\dosc.h"
 #include "..\lib\dirname.h"
@@ -22,80 +23,90 @@
 
 static struct option const longopts[] =
 {
-  {"zero", no_argument, NULL, 'z'},
-  {GETOPT_HELP_OPTION_DECL},
-  {GETOPT_VERSION_OPTION_DECL},
-  {NULL, 0, NULL, 0}
+   {"zero", no_argument, NULL, 'z'},
+   {GETOPT_HELP_OPTION_DECL},
+   {GETOPT_VERSION_OPTION_DECL},
+   {NULL, 0, NULL, 0}
 };
 
-void
-usage (int status)
+void usage(int status)
 {
    if(status != EXIT_SUCCESS)
-    {
-        emit_try_help ();
-    }
+   {
+   emit_try_help ();
+   }
    else
-    {
-      printf (STRING_DIRNAME_USAGE, PROGRAM_NAME);
-      fputs (STRING_DIRNAME_DESCRIPTION, stdout);
-      fputs (STRING_DIRNAME_ARGUMENTS, stdout);
-      fputs (HELP_OPTION_DESCRIPTION, stdout);
-      fputs (VERSION_OPTION_DESCRIPTION, stdout);
-      printf (STRING_DIRNAME_EXAMPLES, PROGRAM_NAME, PROGRAM_NAME, PROGRAM_NAME);
-    }
-  exit (status);
+   {
+      puts(STRING_DIRNAME_DESCRIPTION);
+      puts(STRING_DIRNAME_USAGE_1);
+      puts(STRING_DIRNAME_USAGE_2);
+      puts(STRING_DIRNAME_USAGE_3);
+#if LANGUAGE == TR
+      puts(STRING_DIRNAME_USAGE_4);
+#endif
+      puts(STRING_DIRNAME_ZERO);
+      puts(HELP_OPTION_DESCRIPTION);
+      puts(VERSION_OPTION_DESCRIPTION);
+      puts("");
+      puts(STRING_EXAMPLES);
+      puts(STRING_DIRNAME_EXAMPLE_1);
+      puts(STRING_DIRNAME_EXAMPLE_2);
+      puts(STRING_DIRNAME_EXAMPLE_3);
+   }
+   exit (status);
 }
 
-int
-main (int argc, char **argv)
+int main(int argc, char **argv)
 {
-  static char const dot = '.';
-  bool use_nuls = false;
-  char const *result;
-  size_t len;
+   static char const dot = '.';
+   bool use_nuls = false;
+   char const *result;
+   size_t len;
 
-  while (true)
-    {
+   while(true)
+   {
       int c = getopt_long (argc, argv, "z", longopts, NULL);
 
       if (c == -1)
-        break;
+      {
+         break;
+      }
 
-      switch (c)
-        {
-        case 'z':
-          use_nuls = true;
-          break;
+      switch(c)
+      {
+         case 'z':
+            use_nuls = true;
+            break;
 
-        case_GETOPT_HELP_CHAR;
-        case_GETOPT_VERSION_CHAR;
+         case_GETOPT_HELP_CHAR;
 
-        default:
-          usage (EXIT_FAILURE);
-        }
-    }
+         case_GETOPT_VERSION_CHAR;
 
-  if (argc < optind + 1)
-    {
+         default:
+            usage (EXIT_FAILURE);
+      }
+   }
+
+   if (argc < optind + 1)
+   {
       puts(STRING_MISSING_OPERAND);
       usage (EXIT_FAILURE);
-    }
+   }
 
-  for (; optind < argc; optind++)
-    {
+   for (; optind < argc; optind++)
+   {
       result = argv[optind];
       len = dir_len (result);
 
       if (! len)
-        {
-          result = &dot;
-          len = 1;
-        }
+      {
+         result = &dot;
+         len = 1;
+      }
 
       fwrite (result, 1, len, stdout);
       putchar (use_nuls ? '\0' :'\n');
-    }
+   }
 
-  return EXIT_SUCCESS;
+   return EXIT_SUCCESS;
 }
