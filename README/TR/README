@@ -1,26 +1,28 @@
-DOS Coreutils 0.6
+DOS Coreutils
 
-Linux komutlarnn FreeDOS i‡in 16 bit olarak uyarlanmŸ
+Linux komutlarÂnÂn FreeDOS iâ€¡in 16 bit olarak uyarlanmÂÅ¸Â
 
-Telif hakk (C) 2018 Ercan Ersoy
-Bu program bir ”zgr yazlmdr. (GNU Genel Kamu Lisans)
+Telif hakkÂ (C) 2018 Ercan Ersoy
+Bu program bir â€zgÂr yazÂlÂmdÂr. (GNU Genel Kamu LisansÂ)
 
 Not:
 
-  LiquidFox1776'a katklar i‡in teŸekkrler.
-  DOS Coreutils, GNU Coreutils'in baz par‡alarn i‡erir.
+  LiquidFox1776'a katkÂlarÂ iâ€¡in teÅ¸ekkÂrler.
+  Atnode'a katkÂlarÂ iâ€¡in teÅ¸ekkÂrler.
+  DOS Coreutils, GNU Coreutils'in bazÂ parâ€¡alarÂnÂ iâ€¡erir.
 
-Kullanm:
+KullanÂm:
 
-  command [Argmanlar]
+  command [ArgÂmanlar]
   command --help|--version
 
-  --help argman yardm i‡indir.
-  --version argman srm bilgisi i‡indir.
+  --help argÂmanÂ yardÂm iâ€¡indir.
+  
+  --version argÂmanÂ sÂrÂm bilgisi iâ€¡indir.
 
 Derleme:
 
-  Bu yazlm, Open Watcom ile derlenmelidir.
+  Bu yazÂlÂm, Open Watcom ile derlenmelidir.
 
 Mevcut Komutlar:
 
@@ -44,38 +46,38 @@ Mevcut Komutlar:
   time
   true
 
-Katkda Bulunma:
+KatkÂda Bulunma:
 
-  E§er bu tasarya katkda bulunmak isterseniz, DOS Coreutils'in
-  deposuna katkda bulunmalsnz.
+  EÂ§er bu tasarÂya katkÂda bulunmak isterseniz, DOS Coreutils'in
+  deposuna katkÂda bulunmalÂsÂnÂz.
 
-De§iŸim Gnl§:
+DeÂ§iÅ¸im GÂnlÂÂ§Â:
 
-  0.6 (29.04.2018): GNU GPL 2. Srm'den 3. Srm'e ge‡ildi. Yazm
-  hatalar dzeltildi. Trk‡e'ye ‡evridi. Daha yeni Open Watcom'la
-  derlendi. Dizin yaps de§iŸtirildi. Kaynak belgelere de§iŸim gnl§
+  0.6 (29.04.2018): GNU GPL 2. SÂrÂm'den 3. SÂrÂm'e geâ€¡ildi. YazÂm
+  hatalarÂ dÂzeltildi. TÂrkâ€¡e'ye â€¡evridi. Daha yeni Open Watcom'la
+  derlendi. Dizin yapÂsÂ deÂ§iÅ¸tirildi. Kaynak belgelere deÂ§iÅ¸im gÂnlÂÂ§Â
   eklendi.
 
-  0.5 (28.07.2017): Yazm hatalar dzeltildi. README gncellendi.
-  time.c'deki gerekmeyen tanmlama silindi. beep.c'de, cat.c'de,
-  clear.c'de and dosc.h'de yeniden bi‡imlendirme yapld.
-  date.c'deki, ls.c'deki ve pwd.c'deki MAX_PATH_LENGTH tanmlamas
-  dos.c'ye taŸnd. date.c'deki gerekmeyen kod silindi. pwd.c'deki,
-  rm.c'deki, sh.c'deki ve time.c'deki hatalar dzeltildi. UPX
-  skŸtrmas silindi.
+  0.5 (28.07.2017): YazÂm hatalarÂ dÂzeltildi. README gÂncellendi.
+  time.c'deki gerekmeyen tanÂmlama silindi. beep.c'de, cat.c'de,
+  clear.c'de and dosc.h'de yeniden biâ€¡imlendirme yapÂldÂ.
+  date.c'deki, ls.c'deki ve pwd.c'deki MAX_PATH_LENGTH tanÂmlamasÂ
+  dos.c'ye taÅ¸ÂndÂ. date.c'deki gerekmeyen kod silindi. pwd.c'deki,
+  rm.c'deki, sh.c'deki ve time.c'deki hatalar dÂzeltildi. UPX
+  sÂkÂÅ¸tÂrmasÂ silindi.
 
-  0.4 (24.06.2017): Yazm hatalar dzeltildi. Kaynak kodda baz
-  de§iŸiklikler ve dzeltmeler yapld. MAX_COMMAND_LINE_LENGTH
-  tanmlamas sh.c'den dosc.h'a taŸnd. Baz .exe dosyalar .com
-  dosyalarna d”nŸtrld. €alŸtrlabilir dosyalar yeniden derlendi.
+  0.4 (24.06.2017): YazÂm hatalarÂ dÂzeltildi. Kaynak kodda bazÂ
+  deÂ§iÅ¸iklikler ve dÂzeltmeler yapÂldÂ. MAX_COMMAND_LINE_LENGTH
+  tanÂmlamasÂ sh.c'den dosc.h'a taÅ¸ÂndÂ. BazÂ .exe dosyalarÂ .com
+  dosyalarÂna dâ€nÂÅ¸tÂrÂldÂ. â‚¬alÂÅ¸tÂrÂlabilir dosyalar yeniden derlendi.
 
-  0.3 (22.06.2017): Yazm hatalar dzeltildi. Makefile'de baz
-  de§iŸiklikler yapld. .gitignore dosyas eklendi. help komutu
+  0.3 (22.06.2017): YazÂm hatalarÂ dÂzeltildi. Makefile'de bazÂ
+  deÂ§iÅ¸iklikler yapÂldÂ. .gitignore dosyasÂ eklendi. help komutu
   eklendi.
 
-  0.2 (16.06.2017): Yazm yanlŸlar dzeltildi. Komutlarn hepsinde
-  bulunan hatalar dzeltildi. Ara‡ zinciri Open Watcom'a de§iŸtirildi.
-  €alŸtrlabilir dosyalar eklendi. €alŸtrlabilir dosyalar 16 bit'e
-  gncellendi.
+  0.2 (16.06.2017): YazÂm yanlÂÅ¸larÂ dÂzeltildi. KomutlarÂn hepsinde
+  bulunan hatalar dÂzeltildi. Araâ€¡ zinciri Open Watcom'a deÂ§iÅ¸tirildi.
+  â‚¬alÂÅ¸tÂrÂlabilir dosyalar eklendi. â‚¬alÂÅ¸tÂrÂlabilir dosyalar 16 bit'e
+  gÂncellendi.
   
-  0.1 (12.06.2017): ˜lk srm oluŸturuldu.
+  0.1 (12.06.2017): Ëœlk sÂrÂm oluÅ¸turuldu.
