@@ -1,55 +1,59 @@
-DOS Coreutils 0.6
+# DOS Coreutils
 
 Linux komutlarnn FreeDOS i‡in 16 bit olarak uyarlanmŸ
 
 Telif hakk (C) 2018 Ercan Ersoy
 Bu program bir ”zgr yazlmdr. (GNU Genel Kamu Lisans)
 
-Not:
+## Not:
 
   LiquidFox1776'a katklar i‡in teŸekkrler.
+  
+  Atnode'a katklar i‡in teŸekkrler.
+  
   DOS Coreutils, GNU Coreutils'in baz par‡alarn i‡erir.
 
-Kullanm:
+## Kullanm:
 
   command [Argmanlar]
   command --help|--version
 
   --help argman yardm i‡indir.
+  
   --version argman srm bilgisi i‡indir.
 
-Derleme:
+## Derleme:
 
   Bu yazlm, Open Watcom ile derlenmelidir.
 
-Mevcut Komutlar:
+## Mevcut Komutlar:
 
-  beep
-  cat
-  cd
-  clear
-  cp
-  date
-  dirname
-  echo
-  false
-  help
-  ls
-  mkdir
-  mv
-  pwd
-  rm
-  rmdir
-  sh
-  time
-  true
+  * beep
+  * cat
+  * cd
+  * clear
+  * cp
+  * date
+  * dirname
+  * echo
+  * false
+  * help
+  * ls
+  * mkdir
+  * mv
+  * pwd
+  * rm
+  * rmdir
+  * sh
+  * time
+  * true
 
-Katkda Bulunma:
+## Katkda Bulunma:
 
   E§er bu tasarya katkda bulunmak isterseniz, DOS Coreutils'in
   deposuna katkda bulunmalsnz.
 
-De§iŸim Gnl§:
+## De§iŸim Gnl§:
 
   0.6 (29.04.2018): GNU GPL 2. Srm'den 3. Srm'e ge‡ildi. Yazm
   hatalar dzeltildi. Trk‡e'ye ‡evridi. Daha yeni Open Watcom'la
