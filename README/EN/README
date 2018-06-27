@@ -1,25 +1,23 @@
 DOS Coreutils
 
-16 bits implementation of GNU/Linux commands for FreeDOS.
+16 bit implementation of Linux commands for FreeDOS
 
 Copyright (C) 2018 Ercan Ersoy
-
-This program is licensed under GNU General Public License version 3.
+This program is free software. (GNU General Public License)
 
 Note:
 
-  Thanks LiquidFox1776 for his contributions.
-  Thanks Atnode for his contributions.
+  Thanks LiquidFox1776 for their contributes.
+  Thanks Atnode for their contributes.
   DOS Coreutils includes some parts of GNU Coreutils.
 
 Usage:
 
-    command [Arguments]
-    command --help|--version
+  command [Arguments]
+  command --help|--version
 
-Argument --help is for help.
-
-Argument --version is for version information.
+  Argument --help is for help.
+  Argument --version is for version information.
 
 Available Commands:
 
@@ -45,11 +43,12 @@ Available Commands:
 
 Compile:
 
-This software should be compiled with Open Watcom.
+  This software should be compiled with Open Watcom.
 
-Contribute:
+Contirbute:
 
-If you want to contribute to this project, you can make a pull request to the DOS Coreutils's repository.
+  If you want contribute of this project, you should make a pull
+  request of DOS Coreutils's repository.
 
 Changelog:
 

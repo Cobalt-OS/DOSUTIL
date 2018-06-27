@@ -1,16 +1,17 @@
-DOS Coreutils 0.6
+DOS Coreutils
 
-ImplÃ©mentation 16 bits de commandes GNU/Linux pour FreeDOS.
+Impl‚mentation 16 bits de commandes GNU/Linux pour FreeDOS.
 
 Copyright (C) 2018 Ercan Ersoy
 Ce programme est un logiciel libre sous licence GNU GPLv3.
 
-Remarque :
+Remarque:
 
-  Merci Ã  LiquidFox1776 pour ses contributions.
+  Merci … LiquidFox1776 pour ses contributions.
+  Merci … Atnode pour ses contributions.
   DOS Coreutils inclut certaines parties de GNU Coreutils.
 
-Utiisation :
+Utiisation:
 
   commande [Arguments]
   commande --help | --version
@@ -18,7 +19,7 @@ Utiisation :
   L'argument --help permet d'obtenir l'aide d'une commande.
   L'argument --version permet d'obtenir la version des commandes.
 
-Commandes disponibles :
+Commandes disponibles:
 
   beep
   cat
@@ -42,11 +43,11 @@ Commandes disponibles :
 
 Compiler :
 
-  Ce logiciel doit Ãªtre compilÃ© avec OpenWatcom.
+  Ce logiciel doit ˆtre compil‚ avec OpenWatcom.
 
 Contribuer :
 
-  Si vous voulez contribuer Ã  ce projet, vous pouvez proposer une pull request sur le dÃ©pÃ´t de DOS Coreutils.
+  Si vous voulez contribuer … ce projet, vous pouvez proposer une pull request sur le d‚p“t de DOS Coreutils.
 
 Journal des modifications :
 
@@ -54,25 +55,25 @@ Journal des modifications :
   Correction de fautes de frappe. 
   Quelques corrections au niveau du code. 
   Traduction en langue turque. 
-  Se compile avec un version plus rÃ©cente de OpenWatcom. 
-  Modification de l'arborescence du rÃ©pertoire. 
-  Changelog ajoutÃ© aux fichiers sources.
+  Se compile avec un version plus r‚cente de OpenWatcom. 
+  Modification de l'arborescence du r‚pertoire. 
+  Changelog ajout‚ aux fichiers sources.
 
   0.5 (28-07-2017): Correction de fautes de frappe. 
-  Mise Ã  jour du fichier README. 
-  Suppression de dÃ©finitions inutiles au niveau du fichier time.c.
+  Mise … jour du fichier README. 
+  Suppression de d‚finitions inutiles au niveau du fichier time.c.
   Reformater un code source sur beep.c, cat.c, clear.c et dosc.h. 
-  DÃ©finition MAX_PATH_LENGTH prÃ©sente dans date.c, ls.c et pwd.c dÃ©placÃ©e dans dosc.h.
+  D‚finition MAX_PATH_LENGTH pr‚sente dans date.c, ls.c et pwd.c d‚plac‚e dans dosc.h.
   Suppression de code inutile au niveau de date.c.
   Correction de bugs au niveau de pwd.c, rm.c, sh.c et time.c. 
-  Compression UPX supprimÃ©e.
+  Compression UPX supprim‚e.
 
   0.4 (24-06-2017): Correction des fautes de frappe. 
   Quelques changements et corrections au nivea des codes. 
   Modification du fichier Makefile. 
-  La dÃ©finition MAX_COMMAND_LINE_LENGTH prÃ©sente dans sh.c est dÃ©placÃ©e dans dosc.h. 
-  Certains fichiers .exe sont dÃ©sormais sous forme de .com.
-  Les fichiers exÃ©cutables sont recompilÃ©s.
+  La d‚finition MAX_COMMAND_LINE_LENGTH pr‚sente dans sh.c est d‚plac‚e dans dosc.h. 
+  Certains fichiers .exe sont d‚sormais sous forme de .com.
+  Les fichiers ex‚cutables sont recompil‚s.
 
   0.3 (22-06-2017): Correction des fautes de frappe. 
   Quelques changements au niveau des fichiers Makefile et README.
@@ -82,6 +83,6 @@ Journal des modifications :
   0.2 (16-06-2017): Correction des fautes de frappe.
   Correction de multiples bugs. 
   Changement de toolchain Open Watcom. 
-  Ajout de fichiers exÃ©cutables compilÃ©s en 16 bits.
+  Ajout de fichiers ex‚cutables compil‚s en 16 bits.
 
   0.1 (12-06-2017): Version initiale.
