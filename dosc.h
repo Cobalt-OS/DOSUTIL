@@ -17,6 +17,7 @@
 #include "config.h"
 #include "lang\en.h"
 #include "lang\tr.h"
+#include "lang\fr.h"
 #include "lib\getopt.h"
 
 #define bool char
