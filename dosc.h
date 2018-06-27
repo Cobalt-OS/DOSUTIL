@@ -16,6 +16,7 @@
 #include <unistd.h>
 #include "config.h"
 #include "lang\en.h"
+#include "lang\fr.h"
 #include "lang\tr.h"
 #include "lib\getopt.h"
 

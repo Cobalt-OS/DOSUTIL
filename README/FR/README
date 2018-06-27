@@ -1,0 +1,87 @@
+DOS Coreutils 0.6
+
+Implémentation 16 bits de commandes GNU/Linux pour FreeDOS.
+
+Copyright (C) 2018 Ercan Ersoy
+Ce programme est un logiciel libre sous licence GNU GPLv3.
+
+Remarque :
+
+  Merci à LiquidFox1776 pour ses contributions.
+  DOS Coreutils inclut certaines parties de GNU Coreutils.
+
+Utiisation :
+
+  commande [Arguments]
+  commande --help | --version
+
+  L'argument --help permet d'obtenir l'aide d'une commande.
+  L'argument --version permet d'obtenir la version des commandes.
+
+Commandes disponibles :
+
+  beep
+  cat
+  cd
+  clear
+  cp
+  date
+  dirname
+  echo
+  false
+  help
+  ls
+  mkdir
+  mv
+  pwd
+  rm
+  rmdir
+  sh
+  time
+  true
+
+Compiler :
+
+  Ce logiciel doit être compilé avec OpenWatcom.
+
+Contribuer :
+
+  Si vous voulez contribuer à ce projet, vous pouvez proposer une pull request sur le dépôt de DOS Coreutils.
+
+Journal des modifications :
+
+  0.6 (29-04-2018): Changement de licence (GNU GPL Version 2 vers la GNU GPL Version 3).
+  Correction de fautes de frappe. 
+  Quelques corrections au niveau du code. 
+  Traduction en langue turque. 
+  Se compile avec un version plus récente de OpenWatcom. 
+  Modification de l'arborescence du répertoire. 
+  Changelog ajouté aux fichiers sources.
+
+  0.5 (28-07-2017): Correction de fautes de frappe. 
+  Mise à jour du fichier README. 
+  Suppression de définitions inutiles au niveau du fichier time.c.
+  Reformater un code source sur beep.c, cat.c, clear.c et dosc.h. 
+  Définition MAX_PATH_LENGTH présente dans date.c, ls.c et pwd.c déplacée dans dosc.h.
+  Suppression de code inutile au niveau de date.c.
+  Correction de bugs au niveau de pwd.c, rm.c, sh.c et time.c. 
+  Compression UPX supprimée.
+
+  0.4 (24-06-2017): Correction des fautes de frappe. 
+  Quelques changements et corrections au nivea des codes. 
+  Modification du fichier Makefile. 
+  La définition MAX_COMMAND_LINE_LENGTH présente dans sh.c est déplacée dans dosc.h. 
+  Certains fichiers .exe sont désormais sous forme de .com.
+  Les fichiers exécutables sont recompilés.
+
+  0.3 (22-06-2017): Correction des fautes de frappe. 
+  Quelques changements au niveau des fichiers Makefile et README.
+  Ajout d'un fichier .gitignore. 
+  Ajout d'une commande d'aide.
+
+  0.2 (16-06-2017): Correction des fautes de frappe.
+  Correction de multiples bugs. 
+  Changement de toolchain Open Watcom. 
+  Ajout de fichiers exécutables compilés en 16 bits.
+
+  0.1 (12-06-2017): Version initiale.
