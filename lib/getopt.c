@@ -125,16 +125,16 @@ static void exchange(char **argv, struct _getopt_data *d)
       It leaves the longer segment in the right place overall,
       but it consists of two parts that need to be swapped next.  */
 
-   while (top > middle && middle > bottom)
+   while(top > middle && middle > bottom)
    {
-      if (top - middle > middle - bottom)
+      if(top - middle > middle - bottom)
       {
          /* Bottom segment is the short one.  */
          int len = middle - bottom;
          int i;
 
          /* Swap it with the top part of the top segment.  */
-         for (i = 0; i < len; i++)
+         for(i = 0; i < len; i++)
          {
             tem = argv[bottom + i];
             argv[bottom + i] = argv[top - (middle - bottom) + i];
@@ -490,7 +490,7 @@ int _getopt_internal_r(int argc, char **argv, const char *optstring, const struc
    }
 
    /* Test whether ARGV[optind] points to a non-option argument.  */
-#define NONOPTION_P(argv[d->optind][0] != '-' || argv[d->optind][1] == '\0')
+#define NONOPTION_P (argv[d->optind][0] != '-' || argv[d->optind][1] == '\0')
 
    if(d->__nextchar == NULL || *d->__nextchar == '\0')
    {
