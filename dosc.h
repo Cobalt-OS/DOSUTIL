@@ -10,6 +10,7 @@
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <string.h>
 #include <sys/stat.h>
 #include <time.h>
@@ -20,10 +21,8 @@
 #include "lang\tr.h"
 #include "lib\getopt.h"
 
-#define bool char
-#define false 0
-#define true 1
 #define __DOS__ 1
+#define _(String) String
 
 #ifdef VERSION
 void version(void)
@@ -66,4 +65,25 @@ enum
                        PROGRAM_NAME);\
             }\
         while(0)
-                
+            
+static inline void
+emit_stdin_note (void)
+{
+  fputs (_(STRING_EMIT_STDIN_NOTE), stdout);
+}
+static inline void
+emit_mandatory_arg_note (void)
+{
+  fputs (_(STRING_EMIT_MANDATORY_ARG_NOTE), stdout);
+}
+
+#define STREQ(a, b) (strcmp (a, b) == 0)
+
+#ifndef MAX
+# define MAX(a, b) ((a) > (b)) ? (a) : (b))
+#endif
+
+#ifndef MIN
+# define MIN(a, b) (((a) < (b)) ? (a) : (b))
+#endif
+

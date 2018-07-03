@@ -6,8 +6,12 @@ CFLAGS = -oneatx -ohirbk -ol -ol+ -oi -ei -zp4 -0 -s -ri -ms /bt=dos
 LD = *wlink
 LDFLAGS = option eliminate option vfremoval
 
-all: commands\beep.com commands\cat.com commands\cd.com commands\clear.exe commands\cp.com commands\date.com commands\dirname.com commands\echo.com commands\false.com commands\help.com commands\ls.exe commands\mkdir.com commands\mv.com commands\pwd.com commands\rm.com commands\rmdir.com commands\sh.com commands\time.exe commands\true.com
 
+all: commands\base64.exe commands\beep.com commands\cat.com commands\cd.com commands\clear.exe commands\cp.com commands\date.com commands\dirname.com commands\echo.com commands\false.com commands\help.com commands\ls.exe commands\mkdir.com commands\mv.com commands\pwd.com commands\rm.com commands\rmdir.com commands\sh.com commands\time.exe commands\true.com
+
+commands\base64.exe: commands\base64.obj lib\base32.obj lib\base64.obj lib\bin-io.obj lib\error.obj lib\exitfail.obj lib\fcntl.obj lib\getopt.obj lib\getprogn.obj lib\xbin-io.obj lib\xdec2umx.obj lib\xstrtol.obj lib\xstr2umx.obj gl\fadvise.obj gl\xdec2int.obj
+        $(LD) $(LDFLAGS) option stack=8192 file {$?} #the stack size must be increased from the default size or a stack overflow will occur           
+        
 commands\beep.com: commands\beep.obj
 	$(LD) $(LDFLAGS) system com file $?
 
@@ -65,13 +69,58 @@ commands\time.exe: commands\time.obj
 commands\true.com: commands\true.obj
 	$(LD) $(LDFLAGS) system com file $?
 
+gl\xdec2int.obj: gl\xdec2int.c
+    $(CC) $(CFLAGS) $? -fo=$@
+
+gl\fadvise.obj: gl\fadvise.c
+    $(CC) $(CFLAGS) $? -fo=$@
+
+gl\xdec2umx.obj: gl\xdec2umx.c
+    $(CC) $(CFLAGS) $? -fo=$@
+
 lib\basenaml.obj: lib\basenaml.c
-	$(CC) $(CFLAGS) $? -fo=$@
-
+    $(CC) $(CFLAGS) $? -fo=$@
+    
 lib\dirnamel.obj: lib\dirnamel.c
-	$(CC) $(CFLAGS) $? -fo=$@
-
+    $(CC) $(CFLAGS) $? -fo=$@
+    
 lib\getopt.obj: lib\getopt.c
+    $(CC) $(CFLAGS) $? -fo=$@
+    
+lib\fcntl.obj: lib\fcntl.c
+    $(CC) $(CFLAGS) $? -fo=$@
+    
+lib\xstrtol.obj: lib\xstrtol.c
+    $(CC) $(CFLAGS) $? -fo=$@
+    
+lib\base32.obj: lib\base32.c
+    $(CC) $(CFLAGS) $? -fo=$@
+    
+lib\error.obj: lib\error.c
+    $(CC) $(CFLAGS) $? -fo=$@
+    
+lib\bin-io.obj: lib\bin-io.c
+    $(CC) $(CFLAGS) $? -fo=$@
+    
+lib\getprogn.obj: lib\getprogn.c
+    $(CC) $(CFLAGS) $? -fo=$@
+    
+lib\exitfail.obj: lib\exitfail.c
+    $(CC) $(CFLAGS) $? -fo=$@
+    
+lib\xbin-io.obj: lib\xbin-io.c
+    $(CC) $(CFLAGS) $? -fo=$@
+    
+lib\base64.obj: lib\base64.c
+    $(CC) $(CFLAGS) $? -fo=$@
+    
+lib\xstr2umx.obj: lib\xstr2umx.c
+    $(CC) $(CFLAGS) $? -fo=$@
+    
+lib\xdec2umx.obj: lib\xdec2umx.c
+    $(CC) $(CFLAGS) $? -fo=$@
+
+commands\base64.obj: commands\base64.c
 	$(CC) $(CFLAGS) $? -fo=$@
 
 commands\beep.obj: commands\beep.c
@@ -134,3 +183,5 @@ commands\true.obj: commands\true.c
 clean-obj: .SYMBOLIC
 	@if exist commands\*.obj del commands\*.obj
 	@if exist lib\*.obj del lib\*.obj
+  @if exist gl\*.obj del gl\*.obj
+
