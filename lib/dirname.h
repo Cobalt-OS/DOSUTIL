@@ -21,6 +21,7 @@
 
 #ifndef DIRNAME_H_
    #define DIRNAME_H_ 1
+   #include <stdbool.h>
 
    #include "dosname.h"
 
