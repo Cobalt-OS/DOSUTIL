@@ -54,6 +54,7 @@
    #define STRING_HELP_DOS_COREUTILS_COMMANDS "DOS Coreutils Komutlar:\r\n"
    #define STRING_HELP_OPTION_DESCRIPTION "  --help: Bu yardm bilgisini g”rntler ve ‡kar."
    #define STRING_INVALID_SYNTAX "Ge‡ersiz s”zdizim."
+   #define STRING_LIB_XBIN_IO_ERROR "failed to set file descriptor text/binary mode"
    #define STRING_LS_DESCRIPTION "ls - Dizin i‡eri§ini yazdrr."
    #define STRING_LS_DISPLAY_LONG_LISTING_FORMAT "-l  Uzun listeleme bi‡iminde g”rntler."
    #define STRING_LS_DISPLAY_OUTPUT_AS_ONE_COLUMN "-1  Bir stun olarak ‡kty g”rntler."
