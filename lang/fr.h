@@ -54,6 +54,7 @@
    #define STRING_HELP_DOS_COREUTILS_COMMANDS "Commandes de DOS Coreutils :\r\n"
    #define STRING_HELP_OPTION_DESCRIPTION "  --help: Affiche l'aide de la commande."
    #define STRING_INVALID_SYNTAX "Syntaxe invalide."
+   #define STRING_LIB_XBIN_IO_ERROR "failed to set file descriptor text/binary mode"
    #define STRING_LS_DESCRIPTION "ls - Liste le contenu d'un r‚pertoire."
    #define STRING_LS_DISPLAY_LONG_LISTING_FORMAT "-l  Utilise le long format d\'affichage."
    #define STRING_LS_DISPLAY_OUTPUT_AS_ONE_COLUMN "-1  Affiche un fichier par ligne."
