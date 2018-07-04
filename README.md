@@ -25,6 +25,7 @@ Argument --version is for version information.
 
 ## Available Commands
 
+  * base64
   * beep
   * cat
   * cd
@@ -47,7 +48,7 @@ Argument --version is for version information.
 
 ## Compile
 
-This software should be compiled with Open Watcom.
+This software should be compiled with Open Watcom. Run the wmake utility to build this project.
 
 ## Contribute
 

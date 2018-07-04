@@ -5,6 +5,15 @@
 #define FR 3
 
 #if LANGUAGE == FR
+   #define STRING_BASE64_ARGUMENTS "  -d, --decode          decode data\r\n  -i, --ignore-garbage  when decoding, ignore non-alphabet characters\r\n  -w, --wrap=COLS       wrap encoded lines after COLS character (default 76).\r\n                        Use 0 to disable line wrapping\r\n\r\n"
+   #define STRING_BASE64_CLOSING_STANDARD_INPUT "closing standard input"
+   #define STRING_BASE64_DESCRIPTION "\r\nThe data are encoded as described for the %s alphabet in RFC 4648.\r\nWhen decoding, the input may contain newlines in addition to the bytes of\r\nthe formal %s alphabet.  Use --ignore-garbage to attempt to recover\r\nfrom any other non-alphabet bytes in the encoded stream.\r\n"
+   #define STRING_BASE64_EXTRA_OPERAND "extra operand %s"
+   #define STRING_BASE64_INVALID_INPUT "invalid input"
+   #define STRING_BASE64_INVALID_WRAP_SIZE "invalid wrap size"
+   #define STRING_BASE64_READ_ERROR "read error"
+   #define STRING_BASE64_USAGE "Usage: %s [OPTION]... [FILE]\r\nBase%d encode or decode FILE, or standard input, to standard output.\r\n"
+   #define STRING_BASE64_WRITE_ERROR "write error"
    #define STRING_BEEP_FREQUENCY "  -f Fr‚quence : Sp‚cifie la fr‚quence du son."
    #define STRING_BEEP_LENGTH "  -l Longueur : Sp‚cifie la longueur du son en millisecondes."
    #define STRING_BEEP_USAGE "  beep [Options]"
@@ -37,7 +46,9 @@
    #define STRING_ECHO_NEWLINE_CHARACTER "-n  Affiche en plus les caratŠres de nouvelles lignes."
    #define STRING_ECHO_SPECIAL_CHARACTERS "-e  Affiche des caractŠres sp‚ciaux. Le message doit ˆtre entre guillemets."
    #define STRING_ECHO_USAGE "  echo [Options] Messages"
+   #define STRING_EMIT_MANDATORY_ARG_NOTE "\r\nMandatory arguments to long options are mandatory for short options too.\r\n"
    #define STRING_EMIT_TRY_HELP "Essayez '%s --help' pour plus d'informations.\n"
+   #define STRING_EMIT_STDIN_NOTE "\r\nWith no FILE, or when FILE is -, read standard input.\r\n"
    #define STRING_EXAMPLES "Examples :"
    #define STRING_FALSE_DESCRIPTION "false - Retourner un ‚chec."
    #define STRING_DOES_NOT_DIRECTORY "%s n\'est pas un r‚pertoire\r\n"
@@ -45,6 +56,7 @@
    #define STRING_HELP_DOS_COREUTILS_COMMANDS "Commandes de DOS Coreutils :\r\n"
    #define STRING_HELP_OPTION_DESCRIPTION "  --help: Affiche l'aide de la commande."
    #define STRING_INVALID_SYNTAX "Syntaxe invalide."
+   #define STRING_LIB_XBIN_IO_ERROR "failed to set file descriptor text/binary mode"
    #define STRING_LS_DESCRIPTION "ls - Liste le contenu d'un r‚pertoire."
    #define STRING_LS_DISPLAY_LONG_LISTING_FORMAT "-l  Utilise le long format d\'affichage."
    #define STRING_LS_DISPLAY_OUTPUT_AS_ONE_COLUMN "-1  Affiche un fichier par ligne."
