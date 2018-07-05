@@ -14,13 +14,14 @@
 
 /* Written by Simon Josefsson <simon@josefsson.org>.  */
 /* Ported to FreeDOS by LiquidFox1776 */
+/* Some changes applied by Ercan Ersoy. */
 
 #define BASE_TYPE 64 //Change 64 to 32 to compile as base32
 
 #if BASE_TYPE == 32
-# define PROGRAM_NAME "base32"
+   #define PROGRAM_NAME "base32"
 #else
-# define PROGRAM_NAME "base64"
+   #define PROGRAM_NAME "base64"
 #endif
 
 #include "..\dosc.h"
@@ -33,225 +34,256 @@
 #include "..\lib\xbin-io.h"
 
 #if BASE_TYPE == 32
-# include "..\lib\base32.h"
-# define PROGRAM_NAME "base32"
+   #include "..\lib\base32.h"
+   #define PROGRAM_NAME "base32"
 #else
-# include "..\lib\base64.h"
-# define PROGRAM_NAME "base64"
+   #include "..\lib\base64.h"
+   #define PROGRAM_NAME "base64"
 #endif
 
 #define AUTHORS proper_name ("Simon Josefsson")
 
 static struct option const long_options[] =
 {
-  {"decode", no_argument, 0, 'd'},
-  {"wrap", required_argument, 0, 'w'},
-  {"ignore-garbage", no_argument, 0, 'i'},
+   {"decode", no_argument, 0, 'd'},
+   {"wrap", required_argument, 0, 'w'},
+   {"ignore-garbage", no_argument, 0, 'i'},
 
-  {GETOPT_HELP_OPTION_DECL},
-  {GETOPT_VERSION_OPTION_DECL},
-  {NULL, 0, NULL, 0}
+   {GETOPT_HELP_OPTION_DECL},
+   {GETOPT_VERSION_OPTION_DECL},
+   {NULL, 0, NULL, 0}
 };
 
-void
-usage (int status)
+void usage(int status)
 {
-  if (status != EXIT_SUCCESS)
-    emit_try_help ();
-  else
-    {
-      printf (_(STRING_BASE64_USAGE), PROGRAM_NAME, BASE_TYPE);
+   if(status != EXIT_SUCCESS)
+   {
+      emit_try_help ();
+   }
+   else
+   {
+      fprintf(stdout, STRING_BASE64_DESCRIPTION_1, PROGRAM_NAME, BASE_TYPE);
+      fprintf(stdout, STRING_BASE64_USAGE, PROGRAM_NAME, BASE_TYPE);
+      fprintf(stdout, "  base64 --help|--version\r\n");
+      fputs("\r\n", stdout);
+      emit_stdin_note();
+      emit_mandatory_arg_note();
+      fputs("\r\n", stdout);
+      fputs(STRING_OPTIONS, stdout);
+      fputs("\r\n", stdout);
+      fputs(STRING_BASE64_DECODE, stdout);
+      fputs(STRING_BASE64_IGNORE_GARBAGE, stdout);
+      fputs(STRING_BASE64_WRAP_1, stdout);
+      fputs(STRING_BASE64_WRAP_2, stdout);
+      fputs(STRING_HELP_OPTION_DESCRIPTION, stdout);
+      fputs("\r\n", stdout);
+      fputs(STRING_VERSION_OPTION_DESCRIPTION, stdout);
+      fputs("\r\n\r\n", stdout);
+      fprintf(stdout, STRING_BASE64_DESCRIPTION_2, PROGRAM_NAME, PROGRAM_NAME);
+      fprintf(stdout, STRING_BASE64_DESCRIPTION_3, PROGRAM_NAME, PROGRAM_NAME);
+      fprintf(stdout, STRING_BASE64_DESCRIPTION_4, PROGRAM_NAME, PROGRAM_NAME);
+      fprintf(stdout, STRING_BASE64_DESCRIPTION_5, PROGRAM_NAME, PROGRAM_NAME);
+      //emit_ancillary_info(PROGRAM_NAME);
+   }
 
-      emit_stdin_note ();
-      emit_mandatory_arg_note ();
-
-      fputs (_(STRING_BASE64_ARGUMENTS), stdout);
-      fputs (HELP_OPTION_DESCRIPTION, stdout);
-      fputs ("\n", stdout);
-      fputs (VERSION_OPTION_DESCRIPTION, stdout);
-      fputs ("\n", stdout);
-      printf (_(STRING_BASE64_DESCRIPTION),PROGRAM_NAME, PROGRAM_NAME);
-      //emit_ancillary_info (PROGRAM_NAME);
-    }
-
-  exit (status);
+   exit(status);
 }
 
-#define ENC_BLOCKSIZE (1024*3*10) // 30720
+#define ENC_BLOCKSIZE (1024 * 3 * 10) // 30720
 
 #if BASE_TYPE == 32
-# define BASE_LENGTH BASE32_LENGTH
+   #define BASE_LENGTH BASE32_LENGTH
 /* Note that increasing this may decrease performance if --ignore-garbage
    is used, because of the memmove operation below.  */
-# define DEC_BLOCKSIZE (1024*5) //5120
+   #define DEC_BLOCKSIZE (1024 * 5) //5120
 
 /* Ensure that BLOCKSIZE is a multiple of 5 and 8.  */
-verify (ENC_BLOCKSIZE % 40 == 0);  /* So padding chars only on last block.  */
-verify (DEC_BLOCKSIZE % 40 == 0);  /* So complete encoded blocks are used.  */
+verify(ENC_BLOCKSIZE % 40 == 0);  /* So padding chars only on last block.  */
+verify(DEC_BLOCKSIZE % 40 == 0);  /* So complete encoded blocks are used.  */
 
-# define base_encode base32_encode
-# define base_decode_context base32_decode_context
-# define base_decode_ctx_init base32_decode_ctx_init
-# define base_decode_ctx base32_decode_ctx
-# define isbase isbase32
+   #define base_encode base32_encode
+   #define base_decode_context base32_decode_context
+   #define base_decode_ctx_init base32_decode_ctx_init
+   #define base_decode_ctx base32_decode_ctx
+   #define isbase isbase32
 #else
-# define BASE_LENGTH BASE64_LENGTH
+   #define BASE_LENGTH BASE64_LENGTH
 /* Note that increasing this may decrease performance if --ignore-garbage
    is used, because of the memmove operation below.  */
-# define DEC_BLOCKSIZE (1024*3) //1536 3072
+   #define DEC_BLOCKSIZE (1024 * 3) //1536 3072
 
 /* Ensure that BLOCKSIZE is a multiple of 3 and 4.  */
-verify (ENC_BLOCKSIZE % 12 == 0);  /* So padding chars only on last block.  */
-verify (DEC_BLOCKSIZE % 12 == 0);  /* So complete encoded blocks are used.  */
+verify(ENC_BLOCKSIZE % 12 == 0);  /* So padding chars only on last block.  */
+verify(DEC_BLOCKSIZE % 12 == 0);  /* So complete encoded blocks are used.  */
 
-# define base_encode base64_encode
-# define base_decode_context base64_decode_context
-# define base_decode_ctx_init base64_decode_ctx_init
-# define base_decode_ctx base64_decode_ctx
-# define isbase isbase64
+   #define base_encode base64_encode
+   #define base_decode_context base64_decode_context
+   #define base_decode_ctx_init base64_decode_ctx_init
+   #define base_decode_ctx base64_decode_ctx
+   #define isbase isbase64
 #endif
 
-static void
-wrap_write (const char *buffer, size_t len,
-            uintmax_t wrap_column, size_t *current_column, FILE *out)
+static void wrap_write(const char *buffer, size_t len, uintmax_t wrap_column, size_t *current_column, FILE *out)
 {
-  size_t written;
+   size_t written;
 
-  if (wrap_column == 0)
-    {
+   if(wrap_column == 0)
+   {
       /* Simple write. */
-      if (fwrite (buffer, 1, len, stdout) < len)
-        die (EXIT_FAILURE, errno, _(STRING_BASE64_WRITE_ERROR));
-    }
-  else
-    for (written = 0; written < len;)
+      if (fwrite(buffer, 1, len, stdout) < len)
       {
-        uintmax_t cols_remaining = wrap_column - *current_column;
-        size_t to_write = MIN (cols_remaining, SIZE_MAX);
-        to_write = MIN (to_write, len - written);
+         die(EXIT_FAILURE, errno, STRING_BASE64_WRITE_ERROR);
+      }
+   }
+   else
+   {
+      for(written = 0; written < len;)
+      {
+         uintmax_t cols_remaining = wrap_column - *current_column;
+         size_t to_write = MIN (cols_remaining, SIZE_MAX);
+         to_write = MIN (to_write, len - written);
 
-        if (to_write == 0)
-          {
+         if (to_write == 0)
+         {
             if (fputc ('\n', out) == EOF)
-              die (EXIT_FAILURE, errno, _(STRING_BASE64_WRITE_ERROR));
+            {
+               die(EXIT_FAILURE, errno, STRING_BASE64_WRITE_ERROR);
+            }
+
             *current_column = 0;
-          }
-        else
-          {
+         }
+         else
+         {
             if (fwrite (buffer + written, 1, to_write, stdout) < to_write)
-              die (EXIT_FAILURE, errno, _(STRING_BASE64_WRITE_ERROR));
+            {
+               die(EXIT_FAILURE, errno, STRING_BASE64_WRITE_ERROR);
+            }
+
             *current_column += to_write;
             written += to_write;
-          }
+         }
       }
+   }
 }
 
-static void
-do_encode (FILE *in, FILE *out, uintmax_t wrap_column)
+static void do_encode(FILE *in, FILE *out, uintmax_t wrap_column)
 {
-  size_t current_column = 0;
-  char inbuf[ENC_BLOCKSIZE];
-  char outbuf[40960]; // char outbuf[BASE_LENGTH (ENC_BLOCKSIZE)];
-  size_t sum;
+   size_t current_column = 0;
+   char inbuf[ENC_BLOCKSIZE];
+   char outbuf[40960]; // char outbuf[BASE_LENGTH (ENC_BLOCKSIZE)];
+   size_t sum;
 
-  do
-    {
+   do
+   {
       size_t n;
 
       sum = 0;
       do
-        {
-          n = fread (inbuf + sum, 1, ENC_BLOCKSIZE - sum, in);
-          sum += n;
-        }
+      {
+         n = fread (inbuf + sum, 1, ENC_BLOCKSIZE - sum, in);
+         sum += n;
+      }
       while (!feof (in) && !ferror (in) && sum < ENC_BLOCKSIZE);
 
-      if (sum > 0)
-        {
-          /* Process input one block at a time.  Note that ENC_BLOCKSIZE
-             is sized so that no pad chars will appear in output. */
-          base_encode (inbuf, sum, outbuf, ((sum + 2) / 3) * 4);
+      if(sum > 0)
+      {
+         /* Process input one block at a time.  Note that ENC_BLOCKSIZE
+            is sized so that no pad chars will appear in output. */
+         base_encode(inbuf, sum, outbuf, ((sum + 2) / 3) * 4);
 
-          wrap_write (outbuf, BASE_LENGTH (sum), wrap_column,
-                      &current_column, out);
-        }
-    }
-  while (!feof (in) && !ferror (in) && sum == ENC_BLOCKSIZE);
+         wrap_write(outbuf, BASE_LENGTH (sum), wrap_column, &current_column, out);
+      }
+   }
+   while(!feof(in) && !ferror(in) && sum == ENC_BLOCKSIZE);
 
   /* When wrapping, terminate last line. */
-  if (wrap_column && current_column > 0 && fputc ('\n', out) == EOF)
-    die (EXIT_FAILURE, errno, _(STRING_BASE64_WRITE_ERROR));
+  if(wrap_column && current_column > 0 && fputc('\n', out) == EOF)
+  {
+     die(EXIT_FAILURE, errno, STRING_BASE64_WRITE_ERROR);
+  }
 
-  if (ferror (in))
-    die (EXIT_FAILURE, errno, _(STRING_BASE64_READ_ERROR));
+  if(ferror(in))
+  {
+     die(EXIT_FAILURE, errno, STRING_BASE64_READ_ERROR);
+  }
 }
 
-static void
-do_decode (FILE *in, FILE *out, bool ignore_garbage)
+static void do_decode(FILE *in, FILE *out, bool ignore_garbage)
 {
-  char inbuf[BASE_LENGTH (DEC_BLOCKSIZE)];
-  char outbuf[DEC_BLOCKSIZE];
-  size_t sum, i;
-  struct base_decode_context ctx;
+   char inbuf[BASE_LENGTH (DEC_BLOCKSIZE)];
+   char outbuf[DEC_BLOCKSIZE];
+   size_t sum, i;
+   struct base_decode_context ctx;
 
-  base_decode_ctx_init (&ctx);
+   base_decode_ctx_init (&ctx);
 
-  do
-    {
+   do
+   {
       bool ok;
       size_t n;
       unsigned int k;
 
       sum = 0;
       do
-        {
-          n = fread (inbuf + sum, 1, BASE_LENGTH (DEC_BLOCKSIZE) - sum, in);
+      {
+         n = fread (inbuf + sum, 1, BASE_LENGTH(DEC_BLOCKSIZE) - sum, in);
 
-          if (ignore_garbage)
+         if(ignore_garbage)
+         {
+            for(i = 0; n > 0 && i < n;)
             {
-              for (i = 0; n > 0 && i < n;)
-                {
-                  if (isbase (inbuf[sum + i]) || inbuf[sum + i] == '=')
-                    i++;
-                  else
-                    memmove (inbuf + sum + i, inbuf + sum + i + 1, --n - i);
-                }
+               if(isbase(inbuf[sum + i]) || inbuf[sum + i] == '=')
+               {
+                  i++;
+               }
+               else
+               {
+                  memmove(inbuf + sum + i, inbuf + sum + i + 1, --n - i);
+               }
             }
+         }
 
-          sum += n;
+         sum += n;
 
-          if (ferror (in))
-            die (EXIT_FAILURE, errno, _(STRING_BASE64_READ_ERROR));
-        }
-      while (sum < BASE_LENGTH (DEC_BLOCKSIZE) && !feof (in));
+         if(ferror(in))
+         {
+            die(EXIT_FAILURE, errno, STRING_BASE64_READ_ERROR);
+         }
+      }
+      while(sum < BASE_LENGTH(DEC_BLOCKSIZE) && !feof(in));
 
       /* The following "loop" is usually iterated just once.
          However, when it processes the final input buffer, we want
          to iterate it one additional time, but with an indicator
          telling it to flush what is in CTX.  */
-      for (k = 0; k < 1 + !!feof (in); k++)
-        {
-          if (k == 1 && ctx.i == 0)
+      for(k = 0; k < 1 + !!feof (in); k++)
+      {
+         if (k == 1 && ctx.i == 0)
+         {
             break;
-          n = DEC_BLOCKSIZE;
-          ok = base_decode_ctx (&ctx, inbuf, (k == 0 ? sum : 0), outbuf, &n);
+         }
+         n = DEC_BLOCKSIZE;
+         ok = base_decode_ctx(&ctx, inbuf, (k == 0 ? sum : 0), outbuf, &n);
 
-          if (fwrite (outbuf, 1, n, out) < n)
-            die (EXIT_FAILURE, errno, _(STRING_BASE64_WRITE_ERROR));
+         if(fwrite (outbuf, 1, n, out) < n)
+         {
+            die(EXIT_FAILURE, errno, STRING_BASE64_WRITE_ERROR);
+         }
 
-          if (!ok)
-            die (EXIT_FAILURE, 0, _(STRING_BASE64_INVALID_INPUT));
-        }
-    }
-  while (!feof (in));
+         if(!ok)
+         {
+            die(EXIT_FAILURE, 0, STRING_BASE64_INVALID_INPUT);
+         }
+      }
+   }
+   while(!feof(in));
 }
 
-int
-main (int argc, char **argv)
+int main(int argc, char **argv)
 {
-  int opt;
-  FILE *input_fh;
-  const char *infile;
+   int opt;
+   FILE *input_fh;
+   const char *infile;
 
   /* True if --decode has been given and we should decode data. */
   bool decode = false;
@@ -260,68 +292,83 @@ main (int argc, char **argv)
   /* Wrap encoded data around the 76:th column, by default. */
   uintmax_t wrap_column = 76;
 
-  while ((opt = getopt_long (argc, argv, "diw:", long_options, NULL)) != -1)
-    switch (opt)
+   while((opt = getopt_long(argc, argv, "diw:", long_options, NULL)) != -1)
+   {
+      switch(opt)
       {
-      case 'd':
-        decode = true;
-        break;
+         case 'd':
+            decode = true;
+            break;
 
-      case 'w':
-       wrap_column = xdectoumax (optarg, 0, UINTMAX_MAX, "",
-                                  _(STRING_BASE64_INVALID_WRAP_SIZE), 0);
-        break;
+         case 'w':
+            wrap_column = xdectoumax(optarg, 0, UINTMAX_MAX, "", STRING_BASE64_INVALID_WRAP_SIZE, 0);
+            break;
 
-      case 'i':
-        ignore_garbage = true;
-        break;
+         case 'i':
+            ignore_garbage = true;
+            break;
 
-      case_GETOPT_HELP_CHAR;
+         case_GETOPT_HELP_CHAR;
 
-      case_GETOPT_VERSION_CHAR; //(PROGRAM_NAME, AUTHORS);
+         case_GETOPT_VERSION_CHAR; //(PROGRAM_NAME, AUTHORS);
 
-      default:
-        usage (EXIT_FAILURE);
-        break;
+         default:
+            usage (EXIT_FAILURE);
+            break;
       }
+   }
 
-  if (argc - optind > 1)
-    {
-      error (0, 0, _(STRING_BASE64_EXTRA_OPERAND), argv[optind]);//quote (argv[optind]));
-      usage (EXIT_FAILURE);
-    }
+   if(argc - optind > 1)
+   {
+      error(0, 0, STRING_BASE64_EXTRA_OPERAND, argv[optind]);//quote (argv[optind]));
+      usage(EXIT_FAILURE);
+   }
 
-  if (optind < argc)
-    infile = argv[optind];
-  else
-    infile = "-";
+   if(optind < argc)
+   {
+      infile = argv[optind];
+   }
+   else
+   {
+      infile = "-";
+   }
 
-  if (STREQ (infile, "-"))
-    {
-      xset_binary_mode (STDIN_FILENO, O_BINARY); //calls setmode
+   if(STREQ(infile, "-"))
+   {
+      xset_binary_mode(STDIN_FILENO, O_BINARY); //calls setmode
       input_fh = stdin;
-    }
-  else
-    {
-      input_fh = fopen (infile, "rb");
-      if (input_fh == NULL)
-        die (EXIT_FAILURE, errno, "%s", infile); //quotef (infile));
-    }
+   }
+   else
+   {
+      input_fh = fopen(infile, "rb");
+      if(input_fh == NULL)
+      {
+         die(EXIT_FAILURE, errno, "%s", infile); //quotef (infile));
+      }
+   }
 
-  fadvise (input_fh, FADVISE_SEQUENTIAL);
+   fadvise(input_fh, FADVISE_SEQUENTIAL);
 
-  if (decode)
-    do_decode (input_fh, stdout, ignore_garbage);
- else
-    do_encode (input_fh, stdout, wrap_column);
+   if(decode)
+   {
+      do_decode(input_fh, stdout, ignore_garbage);
+   }
+   else
+   {
+      do_encode(input_fh, stdout, wrap_column);
+   }
 
-  if (fclose (input_fh) == EOF)
-    {
-      if (STREQ (infile, "-"))
-        die (EXIT_FAILURE, errno, _(STRING_BASE64_CLOSING_STANDARD_INPUT));
+   if(fclose (input_fh) == EOF)
+   {
+      if(STREQ(infile, "-"))
+      {
+         die (EXIT_FAILURE, errno, STRING_BASE64_CLOSING_STANDARD_INPUT);
+      }
       else
-        die (EXIT_FAILURE, errno, "%s", infile);// quotef (infile) );
-    }
+      {
+         die (EXIT_FAILURE, errno, "%s", infile);// quotef (infile) );
+      }
+   }
 
   return EXIT_SUCCESS;
 }
