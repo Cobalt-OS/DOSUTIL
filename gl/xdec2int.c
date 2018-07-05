@@ -15,17 +15,14 @@
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 
-
-#include "xdec2int.h"
-#include "xdec2umx.c"
-#include "..\lib\errno.h"
 #include <inttypes.h>
 #include <stdlib.h>
-
+#include "..\lib\errno.h"
 #include "..\lib\error.h"
 //#include "..\lib\quote.h"
 #include "..\lib\xstrtol.h"
-
+#include "xdec2int.h"
+#include "xdec2umx.c"
 
 #define __xdectoint_t uintmax_t
 #define __xstrtol xstrtoumax
@@ -35,43 +32,50 @@
    Strings can have multiplicative SUFFIXES if specified.
    ERR is printed along with N_STR on error.  */
 
-__xdectoint_t
-__xnumtoint (const char *n_str, int base, __xdectoint_t min, __xdectoint_t max,
-             const char *suffixes, const char *err, int err_exit)
+__xdectoint_t __xnumtoint(const char *n_str, int base, __xdectoint_t min, __xdectoint_t max, const char *suffixes, const char *err, int err_exit)
 {
-  strtol_error s_err;
+   strtol_error s_err;
 
-  __xdectoint_t tnum;
-  s_err = __xstrtol (n_str, NULL, base, &tnum, suffixes);
+   __xdectoint_t tnum;
+   s_err = __xstrtol(n_str, NULL, base, &tnum, suffixes);
 
-  if (s_err == LONGINT_OK)
-    {
-      if (tnum < min || max < tnum)
-        {
-          s_err = LONGINT_OVERFLOW;
-          /* Use have the INT range as a heuristic to distinguish
-             type overflow rather than other min/max limits.  */
-          if (tnum > INT_MAX/2)
+   if(s_err == LONGINT_OK)
+   {
+      if(tnum < min || max < tnum)
+      {
+         s_err = LONGINT_OVERFLOW;
+         /* Use have the INT range as a heuristic to distinguish
+            type overflow rather than other min/max limits.  */
+         if(tnum > INT_MAX/2)
+         {
             errno = EOVERFLOW;
+         }
 #if __xdectoint_signed
-          else if (tnum < INT_MIN/2)
+         else if (tnum < INT_MIN/2)
+         {
             errno = EOVERFLOW;
+         }
 #endif
-          else
+         else
+         {
             errno = ERANGE;
-        }
-    }
-  else if (s_err == LONGINT_OVERFLOW)
-    errno = EOVERFLOW;
-  else if (s_err == LONGINT_INVALID_SUFFIX_CHAR_WITH_OVERFLOW)
-    errno = 0; /* Don't show ERANGE errors for invalid numbers.  */
+         }
+      }
+   }
+   else if(s_err == LONGINT_OVERFLOW)
+   {
+      errno = EOVERFLOW;
+   }
+   else if(s_err == LONGINT_INVALID_SUFFIX_CHAR_WITH_OVERFLOW)
+   {
+      errno = 0; /* Don't show ERANGE errors for invalid numbers. */
+   }
 
-  if (s_err != LONGINT_OK)
-    {
+   if(s_err != LONGINT_OK)
+   {
       /* EINVAL error message is redundant in this context.  */
-      error (err_exit ? err_exit : EXIT_FAILURE, errno == EINVAL ? 0 : errno,
-             "%s: %s", err, n_str); //quote (n_str));
-    }
+      error (err_exit ? err_exit : EXIT_FAILURE, errno == EINVAL ? 0 : errno, "%s: %s", err, n_str); //quote (n_str));
+   }
 
   return tnum;
 }
@@ -81,9 +85,7 @@ __xnumtoint (const char *n_str, int base, __xdectoint_t min, __xdectoint_t max,
    Strings can have multiplicative SUFFIXES if specified.
    ERR is printed along with N_STR on error.  */
 
-__xdectoint_t
-__xdectoint (const char *n_str, __xdectoint_t min, __xdectoint_t max,
-             const char *suffixes, const char *err, int err_exit)
+__xdectoint_t __xdectoint(const char *n_str, __xdectoint_t min, __xdectoint_t max, const char *suffixes, const char *err, int err_exit)
 {
-  return __xnumtoint (n_str, 10, min, max, suffixes, err, err_exit);
+   return __xnumtoint (n_str, 10, min, max, suffixes, err, err_exit);
 }

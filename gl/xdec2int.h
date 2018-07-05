@@ -16,23 +16,19 @@
    along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 
 #ifndef XDECTOINT_H_
-# define XDECTOINT_H_ 1
+   #define XDECTOINT_H_ 1
 
-# include <inttypes.h>
-#include <limits.h>
-#include "..\lib\errno.h"
+   #include <inttypes.h>
+   #include <limits.h>
+   #include "..\lib\errno.h"
 
-# define _DECLARE_XDECTOINT(name, type) \
-  type name (const char *n_str, type min, type max, \
-             const char *suffixes, const char *err, int err_exit);
-# define _DECLARE_XNUMTOINT(name, type) \
-  type name (const char *n_str, int base, type min, type max, \
-             const char *suffixes, const char *err, int err_exit);
+   #define _DECLARE_XDECTOINT(name, type) type name (const char *n_str, type min, type max, const char *suffixes, const char *err, int err_exit);
+   #define _DECLARE_XNUMTOINT(name, type) type name (const char *n_str, int base, type min, type max, const char *suffixes, const char *err, int err_exit);
 
-//_DECLARE_XDECTOINT (xdectoimax, intmax_t)
-_DECLARE_XDECTOINT (xdectoumax, uintmax_t)
+//_DECLARE_XDECTOINT(xdectoimax, intmax_t)
+_DECLARE_XDECTOINT(xdectoumax, uintmax_t)
 
-_DECLARE_XNUMTOINT (xnumtoimax, intmax_t)
-_DECLARE_XNUMTOINT (xnumtoumax, uintmax_t)
+_DECLARE_XNUMTOINT(xnumtoimax, intmax_t)
+_DECLARE_XNUMTOINT(xnumtoumax, uintmax_t)
 
 #endif  /* not XDECTOINT_H_ */

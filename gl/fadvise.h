@@ -14,9 +14,11 @@
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 
+   /* Some changes applied by Ercan Ersoy. */
+
 #include <stdio.h>
-#include "..\lib\fcntl.h"
 #include <sys/types.h>
+#include "..\lib\fcntl.h"
 
 /* There are a few hints one can provide, which have the
    following characteristics on Linux 2.6.31 at least.
@@ -41,22 +43,24 @@
    value is needed, but it must be guarded by appropriate #ifdefs.  */
 
 #if HAVE_POSIX_FADVISE
-typedef enum {
-  FADVISE_NORMAL =     POSIX_FADV_NORMAL,
-  FADVISE_SEQUENTIAL = POSIX_FADV_SEQUENTIAL,
-  FADVISE_NOREUSE =    POSIX_FADV_NOREUSE,
-  FADVISE_DONTNEED =   POSIX_FADV_DONTNEED,
-  FADVISE_WILLNEED =   POSIX_FADV_WILLNEED,
-  FADVISE_RANDOM =     POSIX_FADV_RANDOM
+typedef enum
+{
+   FADVISE_NORMAL =  POSIX_FADV_NORMAL,
+   FADVISE_SEQUENTIAL = POSIX_FADV_SEQUENTIAL,
+   FADVISE_NOREUSE = POSIX_FADV_NOREUSE,
+   FADVISE_DONTNEED = POSIX_FADV_DONTNEED,
+   FADVISE_WILLNEED = POSIX_FADV_WILLNEED,
+   FADVISE_RANDOM = POSIX_FADV_RANDOM
 } fadvice_t;
 #else
-typedef enum {
-  FADVISE_NORMAL,
-  FADVISE_SEQUENTIAL,
-  FADVISE_NOREUSE,
-  FADVISE_DONTNEED,
-  FADVISE_WILLNEED,
-  FADVISE_RANDOM
+typedef enum
+{
+   FADVISE_NORMAL,
+   FADVISE_SEQUENTIAL,
+   FADVISE_NOREUSE,
+   FADVISE_DONTNEED,
+   FADVISE_WILLNEED,
+   FADVISE_RANDOM
 } fadvice_t;
 #endif
 
@@ -67,5 +71,5 @@ typedef enum {
    unconditional passing of descriptors to non standard files,
    which will just be ignored if unsupported.  */
 
-void fdadvise (int fd, off_t offset, off_t len, fadvice_t advice);
-void fadvise (FILE *fp, fadvice_t advice);
+void fdadvise(int fd, off_t offset, off_t len, fadvice_t advice);
+void fadvise(FILE *fp, fadvice_t advice);
