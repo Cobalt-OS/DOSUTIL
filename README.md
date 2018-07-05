@@ -1,6 +1,7 @@
 **DOS Coreutils Project no longer development. If you would like contribute this project, you may contribute FreeDOS Coreutils.**
 
 FreeDOS Coreutils: https://github.com/ercanersoy/FreeDOS-Coreutils
+                   https://gitlab.com/ercanersoy/FreeDOS-Coreutils
 
 # DOS Coreutils
 
