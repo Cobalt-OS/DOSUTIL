@@ -13,7 +13,7 @@
    along with this program.  If not, see <https://www.gnu.org/licenses/>. */
 
 /* Written by Simon Josefsson <simon@josefsson.org>.  */
-/* Ported to FreeDOS by LiquidFox1776 */
+/* Ported to FreeDOS by LiquidFox1776. */
 /* Some changes applied by Ercan Ersoy. */
 
 #define BASE_TYPE 64 //Change 64 to 32 to compile as base32

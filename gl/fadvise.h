@@ -14,7 +14,7 @@
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 
-   /* Some changes applied by Ercan Ersoy. */
+/* Some changes applied by Ercan Ersoy. */
 
 #include <stdio.h>
 #include <sys/types.h>
