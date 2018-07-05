@@ -17,16 +17,16 @@
 
 #define __END_DECLS
 #ifndef _GETOPT_H
-   #define _GETOPT_H 1
+#define _GETOPT_H 1
 
 /* The type of the 'argv' argument to getopt_long and getopt_long_only
    is properly 'char **', since both functions may write to the array
    (in order to move all the options to the beginning).  However, for
    compatibility with old versions of LSB, glibc has to use 'char *const *'
    instead.  */
-   #ifndef __getopt_argv_const
-      #define __getopt_argv_const const
-   #endif
+#ifndef __getopt_argv_const
+# define __getopt_argv_const const
+#endif
 
 /* For communication from 'getopt' to the caller.
    When 'getopt' finds an option that takes an argument,
@@ -102,22 +102,31 @@ extern int getopt (int ___argc, char *const *___argv, const char *__shortopts);
 
 struct option
 {
-   const char *name;
-   /* has_arg can't be an enum because some compilers complain about
-      type mismatches in all the code that assumes it is an int.  */
-   int has_arg;
-   int *flag;
-   int val;
+  const char *name;
+  /* has_arg can't be an enum because some compilers complain about
+     type mismatches in all the code that assumes it is an int.  */
+  int has_arg;
+  int *flag;
+  int val;
 };
 
 /* Names for the values of the 'has_arg' field of 'struct option'.  */
 
-   #define no_argument             0
-   #define required_argument       1
-   #define optional_argument       2
+#define no_argument             0
+#define required_argument       1
+#define optional_argument       2
 
-extern int getopt_long (int ___argc, char *__getopt_argv_const *___argv, const char *__shortopts, const struct option *__longopts, int *__longind);
+extern int getopt_long (int ___argc, 
+char *__getopt_argv_const *___argv, 
+const char *__shortopts,
+const struct option *__longopts, 
+int *__longind);
 
-extern int getopt_long_only (int ___argc, char *__getopt_argv_const *___argv, const char *__shortopts, const struct option *__longopts, int *__longind);
+extern int getopt_long_only (int ___argc, 
+char *__getopt_argv_const *___argv,
+const char *__shortopts,
+const struct option *__longopts, 
+int *__longind);
+
 
 #endif /* getopt.h */
