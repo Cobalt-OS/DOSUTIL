@@ -43,15 +43,15 @@ enum
 #define GETOPT_VERSION_OPTION_DECL "version", no_argument, NULL, GETOPT_VERSION_CHAR
 
 #define case_GETOPT_HELP_CHAR  \
-  case GETOPT_HELP_CHAR:  \
-    usage (EXIT_SUCCESS);  \
-    break;
-    
+   case GETOPT_HELP_CHAR:  \
+     usage (EXIT_SUCCESS);  \
+     break;
+
 #define case_GETOPT_VERSION_CHAR  \
-  case GETOPT_VERSION_CHAR:  \
-    version();  \
-    exit (EXIT_SUCCESS);  \
-    break;
+   case GETOPT_VERSION_CHAR:  \
+     version();  \
+     exit (EXIT_SUCCESS);  \
+     break;
 
 #define emit_try_help()  \
    do  \
@@ -81,4 +81,3 @@ static inline void emit_mandatory_arg_note(void)
 #ifndef MIN
    #define MIN(a, b) (((a) < (b)) ? (a) : (b))
 #endif
-
