@@ -1,3 +1,7 @@
+**DOS Coreutils Project no longer development. If you would like contribute this project, you may contribute FreeDOS Coreutils.**
+
+FreeDOS Coreutils: https://github.com/ercanersoy/FreeDOS-Coreutils
+
 # DOS Coreutils
 
 16 bits implementation of GNU/Linux commands for FreeDOS.
