@@ -1,4 +1,4 @@
-0.0:Language file Created by LiquidFox1776
+0.0:Language file Created by LiquidFox1776 for base32
 0.1:  -d, --decode          decode data\r\n  -i, --ignore-garbage  when decoding, ignore non-alphabet characters\r\n  -w, --wrap=COLS       wrap encoded lines after COLS character (default 76).\r\n                        Use 0 to disable line wrapping\r\n\r\n
 0.2:closing standard input
 0.3:\r\nThe data are encoded as described for the %s alphabet in RFC 4648.\r\nWhen decoding, the input may contain newlines in addition to the bytes of\r\nthe formal %s alphabet.  Use --ignore-garbage to attempt to recover\r\nfrom any other non-alphabet bytes in the encoded stream.\r\n
