@@ -1,0 +1,3 @@
+0.0:Language File for True.c Written by LiquidFox1776
+0.1:Usage: %s [ignored command line arguments]\r\n  or:  %s OPTION\r\n
+0.2:Exit with a status code indicating success.
