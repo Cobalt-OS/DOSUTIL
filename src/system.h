@@ -79,3 +79,13 @@ emit_mandatory_arg_note (void)
 # define MIN(a, b) (((a) < (b)) ? (a) : (b))
 #endif
 
+#define USAGE_BUILTIN_WARNING \
+  _("\n" \
+"NOTE: your shell may have its own version of %s, which usually supersedes\n" \
+"the version described here.  Please refer to your shell's documentation\n" \
+"for details about the options it supports.\n")
+
+#ifndef FALLTHROUGH
+#define FALLTHROUGH
+#endif
+
