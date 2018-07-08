@@ -46,6 +46,7 @@
 
 #include <io.h>
 
+#define AT_FDCWD -30000
 #define F_DUPFD 0 // Return a new file descriptor which shall be the lowest numbered available
 #define F_GETFD 1 //Get the file descriptor flags defined in <fcntl.h> that are associated with the file descriptor fildes.
 #define F_SETFD 2 //Set the file descriptor flags defined in <fcntl.h>, that are associated with fildes, to the third argument, arg, taken as type int
