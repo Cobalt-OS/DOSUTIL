@@ -36,9 +36,10 @@ int
 push_nls_call_stack(char *sub_directory, char *file_name){
         struct NLS_CALL_STACK *tmp_struct;
         nls_call_stack = (struct NLS_CALL_STACK *) malloc(sizeof(struct NLS_CALL_STACK));
-
+     
     tmp_struct = (struct NLS_CALL_STACK*) malloc(sizeof(struct NLS_CALL_STACK));
-    if(tmp_struct != NULL){
+    
+     if(tmp_struct != NULL){
         
         strncpy(tmp_struct->sub_directory, sub_directory, MAX_PATH);
         strncpy(tmp_struct->file_name, file_name, MAX_PATH);
@@ -80,41 +81,49 @@ It uses the LANG environment variable as a file extension
 int
 open_nls_file(const char *sub_directory, const char *file_name){
     char lang[MAX_LANG_CODE_LENGTH];
-    char coreutil_nls_path[MAX_PATH];
+    char coreutil_nls_path[PATH_MAX];
     size_t len;
-    char nls_file_path[MAX_PATH];
-    
+    char nls_file_path[PATH_MAX];
+    int rc;
+
     if( getenv_s( &len, coreutil_nls_path, sizeof(coreutil_nls_path), "COREUTIL_NLS_PATH") != 0 )
         return -1;
 
     if( getenv_s( &len, lang, sizeof(lang), "LANG") == 0 )
-        _snprintf(nls_file_path, MAX_PATH, "%s%s%s%s%s%s%s", coreutil_nls_path, "\\", sub_directory, "\\", file_name, ".", lang);
+        _snprintf(nls_file_path, PATH_MAX, "%s%s%s%s%s%s%s", coreutil_nls_path, "\\", sub_directory, "\\", file_name, ".", lang);
     else
         return -1;
 
-   kittenclose();
-   kittenopen (nls_file_path);
+   if(nls_call_stack != NULL) /* if catalog is open than close */
+        kittenclose();
+   if(kittenopen (nls_file_path) ==-1)
+        return -1; //Failed to open
 
-    return push_nls_call_stack(sub_directory, file_name);
+   rc =  push_nls_call_stack(sub_directory, file_name);
+    if(rc == -1){ 
+        kittenclose();
+        return -1;
+    }
+ 
+ return rc;
 }
 
 /* closes the kitten file and pops the nls call stack
-if from_main_program is true, the nls_call_stack will be destroyed
 */
 void
 close_nls_file(bool from_main_program){
-    pop_nls_call_stack();
     
     if(from_main_program)
       destroy_nls_call_stack(); 
     else{
-        kittenclose ();
+        pop_nls_call_stack();
         open_nls_file(nls_call_stack->sub_directory, nls_call_stack->file_name); /* Reopen kitten as if the prev caller did */
     }
 }
 
 /* calls kittengets*/
 char *get_nls_string(int set_number, int message_number, char *message){
+
     return kittengets(set_number,message_number, message);
 }
 
