@@ -1,0 +1,3 @@
+0.0:Language file for src\system.h written by LiquidFox1776
+0.1:\r\nWith no FILE, or when FILE is -, read standard input.\r\n
+0.2:Try line '%s --help' for more information.\r\n
